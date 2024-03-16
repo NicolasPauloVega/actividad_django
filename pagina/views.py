@@ -9,5 +9,5 @@ def index(request):
         'titulo': 'Página de Inicio',
     })
 
-def about_us(request):
-    return render(request, 'about_us.html')
+def future(request):
+    return render(request, 'future.html')
