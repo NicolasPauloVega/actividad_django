@@ -16,7 +16,7 @@
         <div class="logotipo">
             <img src="{% static 'img/logo(school).png' %}">
             <div class="titulo_slogan">
-                <h1>Escuela de Innovación y Tecnología Avanzada | IETA 2024</h1>
+                <h1>Universidad de Inovación y Tecnología Avanzada | UITA 2024</h1>
                 <hr>
                 <h4>Formando mentes para el mañana: ¡Innovación y excelencia en cada paso!</h4>
             </div>
@@ -25,7 +25,7 @@
 
     <nav>
         <ul>
-            <li><a href="">Inicio</a></li>
+            <li><a href="{% url "index" %}">Inicio</a></li>
         </ul>
         <ul>
             <li><a href="">Nosotros</a></li>
@@ -33,9 +33,11 @@
     </nav>
 
     <div id="contenido">
-        {% block content %}
+        <div class="box">
+            {% block content %}
 
-        {% endblock %}
+            {% endblock %}
+        </div>
     </div>
 
     <footer>Master de Framework Django &copy; Nicolas Paulo Vega ({% now 'd/m/y h:i:s' %})</footer>

@@ -38,7 +38,7 @@ header{
 }
 
 .logotipo .titulo_slogan h1{
-    font-size: 38px;
+    font-size: 36px;
 }
 
 .logotipo .titulo_slogan hr{
@@ -115,4 +115,20 @@ footer{
     margin-bottom: 10px;
     color: black;
     font-weight: bold;
+}
+
+.box .page{
+    padding: 20px;
+}
+
+.box .page h1{
+    text-align: center;
+}
+
+.box .page p{
+    font-size: 20px;
+}
+
+.box .page p a{
+    text-decoration: none;
 }
