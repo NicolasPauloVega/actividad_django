@@ -12,19 +12,28 @@ body{
 header{
     background-color: #F5F5F5;
     color: #666666;
-    border-radius: 20px;
     margin: 0px auto;
-    width: 1212px;
+    align-items: center;
+    width: 1300px;
     height: 140px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    margin-top: 20px;
+    border-radius: 10px 10px 0px 0px;
 }
 
 .logotipo {
+    padding-left: 40px;
+    padding-right: 40px;
     display: flex;
     align-items: center;
 }
 
 .logotipo img{
     padding: 20px;
+    padding-left: 40px;
     width: 100px;
 }
 
@@ -39,4 +48,67 @@ header{
 
 .logotipo .titulo_slogan h4{
     font-size: 20px;
+}
+
+nav{
+    background-color: #D5D5D5;
+    color: #666666;
+    margin: 0px auto;
+    width: 1320px;
+    height: 40px;
+    display: flex;
+    font-size: 18px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+nav ul{
+    /* padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px; */
+    line-height: 40px;
+    float: left;
+    list-style: none;
+}
+
+nav ul li a{
+    color: #666666;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-decoration: none;
+}
+
+nav ul li a:hover{
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #777777;
+    color: #333333;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+#contenido{
+    border-radius: 10px 10px 0px 0px;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    width: 1305px;
+    min-height: 930px;
+    margin: 20px auto 0px auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer{
+    background-color: #777777;
+    width: 1330px;
+    height: 23px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
 }
