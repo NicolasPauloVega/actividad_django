@@ -2,24 +2,41 @@
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 body{
-    background-color: #F2F2F2;
+    background-color: #E6E6E6;
 }
 
 header{
-    background-color: azure;
+    background-color: #F5F5F5;
+    color: #666666;
     border-radius: 20px;
     margin: 0px auto;
     width: 1212px;
     height: 140px;
 }
 
-.logotipo h1{
-    font-size: 40px;
-    display: block;
-    text-transform: uppercase;
-    color: aqua;
+.logotipo {
+    display: flex;
+    align-items: center;
+}
+
+.logotipo img{
+    padding: 20px;
+    width: 100px;
+}
+
+.logotipo .titulo_slogan h1{
+    font-size: 38px;
+}
+
+.logotipo .titulo_slogan hr{
+    height: 5px;
+    background-color: #666666;
+}
+
+.logotipo .titulo_slogan h4{
+    font-size: 20px;
 }
