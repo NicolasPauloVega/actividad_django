@@ -133,6 +133,7 @@ footer{
     text-decoration: none;
 }
 
-.box .page-about_us{
-    padding: 20px 20px 20px 20px;
+.box .page .motivation, .creator, .objetive{
+    font-style: italic;
+    font-weight: bold;
 }
