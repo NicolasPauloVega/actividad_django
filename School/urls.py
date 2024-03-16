@@ -22,5 +22,6 @@ import pagina.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', pagina.views.index, name="index"),
-    path('future/', pagina.views.future, name="future")
+    path('future/', pagina.views.future, name="future"),
+    path('carreras/', pagina.views.academic_programs, name="academics_programs"),
 ]

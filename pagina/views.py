@@ -11,3 +11,6 @@ def index(request):
 
 def future(request):
     return render(request, 'future.html')
+
+def academic_programs(request):
+    return render(request, 'academics_programs.html')
