@@ -22,4 +22,5 @@ import pagina.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', pagina.views.index, name="index"),
+    path('¿quienesSomos?/', pagina.views.about_us, name="about_us")
 ]
