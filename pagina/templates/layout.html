@@ -10,6 +10,7 @@
             {% comment 'titulo de pagina' %} Nombre de la pagina {% endcomment %}
         {% endblock %}
     </title>
+    <link rel="icon" href="{% static "img/logo(school).png" %}">
 </head>
 <body>
     <header>
@@ -28,7 +29,7 @@
             <li><a href="{% url "index" %}">Inicio</a></li>
         </ul>
         <ul>
-            <li><a href="{% url "about_us" %}">Nosotros</a></li>
+            <li><a href="{% url "about_us" %}"></a></li>
         </ul>
     </nav>
 
