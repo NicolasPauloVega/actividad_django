@@ -17,11 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 # from pagina import views
-import pagina.views
+import pagina.views # Importa las vistas desde la aplicación 'pagina'
 
+# Definición de las URL de la aplicación
 urlpatterns = [
+    # URL para acceder al panel de administración de Django
     path('admin/', admin.site.urls),
+    # URL para la página de inicio, que llama a la vista 'index' definida en 'pagina.views'
     path('', pagina.views.index, name="index"),
+    # URL para la página futura, que llama a la vista 'future' definida en 'pagina.views'
     path('future/', pagina.views.future, name="future"),
+    # URL para la página de programas académicos, que llama a la vista 'academic_programs' definida en 'pagina.views'
     path('carreras/', pagina.views.academic_programs, name="academics_programs"),
 ]

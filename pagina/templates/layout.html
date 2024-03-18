@@ -13,38 +13,56 @@
     <link rel="icon" href="{% static "img/logo(school).png" %}">
 </head>
 <body>
+    {% comment #1 %} Encabezado de la página {% endcomment %}
     <header>
+        {% comment #2 %} Contenedor del logotipo y el eslogan {% endcomment %}
         <div class="logotipo">
-            <img src="{% static 'img/logo(school).png' %}">
+            {% comment #2.1 %} Imagen del logotipo obtenida de los archivos estáticos {% endcomment %}
+            <img src="{% static 'img/logo(school).png' %}"> 
+            {% comment #2.2 %} Contenedor del título y el eslogan {% endcomment %}
             <div class="titulo_slogan">
+                {% comment #2.2.1 %} Título de la universidad {% endcomment %}
                 <h1>La Universidad Ceicotol Tolima (UCT)</h1>
+                {% comment #2.2.2 %} Línea horizontal {% endcomment %}
                 <hr>
+                {% comment #2.2.3 %} Eslogan de la universidad {% endcomment %}
                 <h4>Formando mentes para el mañana: ¡Innovación y excelencia en cada paso!</h4>
             </div>
         </div>
     </header>
 
+    {% comment #3 %} Barra de navegación {% endcomment %}
     <nav>
+        {% comment #4 %} Lista de elementos de navegación {% endcomment %}
         <ul>
+            {% comment #4.1 %} Elemento de navegación para la página de inicio {% endcomment %}
             <li><a href="{% url "index" %}">Inicio</a></li>
         </ul>
         <ul>
+            {% comment #4.2 %} Elemento de navegación para la página de descubrimiento futuro {% endcomment %}
             <li><a href="{% url "future" %}">Descubre tu futuro</a></li>
         </ul>
         <ul>
+            {% comment #4.3 %} Elemento de navegación para la página de programas académicos {% endcomment %}
             <li><a href="{% url "academics_programs" %}">Carreras</a></li>
         </ul>
     </nav>
 
+    {% comment #5 %} Contenido principal {% endcomment %}
     <div id="contenido">
         <div class="box">
+            {% comment #5.1 %} Bloque de contenido específico de cada página {% endcomment %}
             {% block content %}
 
             {% endblock %}
         </div>
     </div>
 
-    <footer>Master de Framework Django &copy; Nicolas Paulo Vega ({% now 'd/m/y h:i:s' %})</footer>
+    {% comment #6 %} Pie de página {% endcomment %}
+    <footer>
+        {% comment #6.1 %} Información del pie de página, incluyendo el nombre del creador y la fecha actual {% endcomment %}
+        Master de Framework Django &copy; Nicolas Paulo Vega ({% now 'd/m/y h:i:s' %})
+    </footer>
 
 </body>
 </html>
