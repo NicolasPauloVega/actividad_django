@@ -27,6 +27,6 @@ urlpatterns = [
     path('', pagina.views.index, name="index"),
     # URL para la página futura, que llama a la vista 'future' definida en 'pagina.views'
     path('future/', pagina.views.future, name="future"),
-    # URL para la página de programas académicos, que llama a la vista 'academic_programs' definida en 'pagina.views'
-    path('carreras/', pagina.views.academic_programs, name="academics_programs"),
+    # URL para la página de programas académicos, que llama a la vista 'careers' definida en 'pagina.views'
+    path('carreras/', pagina.views.careers, name="careers"),
 ]

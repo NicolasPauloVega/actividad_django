@@ -17,6 +17,6 @@ def future(request):
     return render(request, 'future.html')
 
 # Vista para los programas académicos
-def academic_programs(request):
-    # Retorna la plantilla 'academic_programs.html' renderizada
-    return render(request, 'academics_programs.html')
+def careers(request):
+    # Retorna la plantilla 'careers.html' renderizada
+    return render(request, 'careers.html')
