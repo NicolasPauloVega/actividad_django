@@ -22,18 +22,5 @@ class Materi(models.Model):
         # Nombre legible para una instancia única del modelo.
         verbose_name="Materia"
         # Nombre en plural para múltiples instancias del modelo.
-        verbose_name="Materias"
-        
-class Student(models.Model):
-    code = models.IntegerField(unique=True, verbose_name="Código")
-    name = models.CharField(max_length=100,verbose_name="Nombre")
-    surname = models.CharField(max_length=100,verbose_name="Apellido")
-    email = models.EmailField(verbose_name="Correo electronico")
-    telephone = models.CharField(max_length=20, verbose_name="Teléfono")
-    date_of_birth = models.DateField(verbose_name="Fecha de nacimiento")
-    photo = models.ImageField (default='null', verbose_name="Foto estudiante",upload_to='fotos_estudiantes/')
-    creation_date = models.DateTimeField(auto_now_add=True, verbose_name="Fecha creación")
-    update_date = models.DateTimeField(auto_now=True, verbose_name="Fecha actualización")
-    #career = models.ForeignKey(Carrera, on_delete=models.CASCADE) relacion
     def __str__(self):
-        return f'{self.name} {self.surname}'
+        verbose_name="Materias"
