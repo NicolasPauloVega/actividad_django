@@ -22,5 +22,4 @@ class Materi(models.Model):
         # Nombre legible para una instancia única del modelo.
         verbose_name="Materia"
         # Nombre en plural para múltiples instancias del modelo.
-    def __str__(self):
         verbose_name="Materias"
