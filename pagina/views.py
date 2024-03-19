@@ -20,3 +20,12 @@ def future(request):
 def careers(request):
     # Retorna la plantilla 'careers.html' renderizada
     return render(request, 'careers.html')
+
+def courses(request):
+    return render(request, 'courses.html')
+
+def students(request):
+    return render(request, 'students.html')
+
+def teachers(request):
+    return render(request, 'teachers.html')
