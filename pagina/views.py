@@ -23,9 +23,9 @@ def careers(request):
     return render(request, 'careers.html')
 
 def courses(request):
-    courses = Materi.objects.order_by('code')
+    materi = Materi.objects.order_by('code')
     return render(request, 'courses.html',{
-        'courses': courses
+        'materi': materi
     })
 
 def students(request):
