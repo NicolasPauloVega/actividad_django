@@ -38,4 +38,7 @@ def students(request):
     })
 
 def teachers(request):
-    return render(request, 'teachers.html')
+    teacher = Teacher.objects.order_by('code')
+    return render(request, 'teachers.html', {
+        'teacher': teacher
+    })
