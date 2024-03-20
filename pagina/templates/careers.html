@@ -25,4 +25,37 @@
 
     <p>Explora nuestras opciones, descubre tu pasión y da el primer paso hacia un futuro brillante. ¡Estamos aquí para guiarte en cada paso del camino!</p>
 
+    <br>
+
+    <h2 class="carreras-h2">Lista de carreras</h2>
+
+    <br>
+
+    <div class="lista-carreras">
+
+        <table class="tabla-carreras">
+
+            <thead>
+                    <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Duracion (semana)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for careers in career %}
+                <tr>
+                    <td>{{ careers.code }}</td>
+                    <td>{{ careers.name }}</td>
+                    <td>{{ careers.duration }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
 {% endblock  %}

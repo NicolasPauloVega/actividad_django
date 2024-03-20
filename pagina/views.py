@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-from pagina.models import Materi
+from pagina.models import Materi,Careers
 
 # Create your views here.
 
@@ -19,8 +19,11 @@ def future(request):
 
 # Vista para los programas académicos
 def careers(request):
+    career = Careers.objects.order_by('code')
     # Retorna la plantilla 'careers.html' renderizada
-    return render(request, 'careers.html')
+    return render(request, 'careers.html',{
+        'career': career
+    })
 
 def courses(request):
     materi = Materi.objects.order_by('code')

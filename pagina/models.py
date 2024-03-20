@@ -52,6 +52,14 @@ class Careers(models.Model):
     name = models.CharField(max_length=150, verbose_name="nombre")
     # Campo para la duracion de la carrera
     duration = models.PositiveIntegerField(verbose_name="Duracion en la carrera")
+    
+    class Meta:
+        # Clase Meta para proporcionar metadatos para el modelo Materia.
+        #db_table=""
+        # Nombre legible para una instancia única del modelo.
+        verbose_name="Carrera"
+        # Nombre en plural para múltiples instancias del modelo.
+        verbose_name="Carreras"
 
     @classmethod
     def get_next_code(cls):
