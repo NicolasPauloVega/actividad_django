@@ -4,21 +4,17 @@ from .models import Materi, Careers, students, Teacher
 class MateriForm(forms.ModelForm):
     class Meta:
         model = Materi
-        fields = ['nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'profesor']
+        fields = ['name', 'description', 'creadits']
 
 class CareersForm(forms.ModelForm):
     class Meta:
         model = Careers
-        fields = ['nombre', 'descripcion', 'duración', 'tipo']
+        fields = '__all__'
 
 class StudentsForm(forms.ModelForm):
     class Meta:
         model = students
-        fields = ['nombre', 'apellido', 'fecha_nacimiento', 'correo', 'carrera']
-
-        widgets = {
-            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}),
-        }
+        fields = ['name', 'last_name', 'email', 'phone']
 
 class TeacherForm(forms.ModelForm):
     class Meta:
