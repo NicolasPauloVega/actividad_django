@@ -1,5 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import redirect, render, HttpResponse
 from pagina.models import Materi,Careers, students, Teacher
+from .forms import MateriForm, CareersForm, StudentsForm, TeacherForm
 
 # Create your views here.
 
@@ -42,4 +43,43 @@ def teachers(request):
     return render(request, 'teachers.html', {
         'teacher': teacher
     })
-    
+
+def create_materi(request):
+    if request.method == 'POST':
+        form = MateriForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('courses')  # Redirect to courses after successful form submission
+    else:
+        form = MateriForm()
+    return render(request, 'create_materi.html', {'form': form})
+
+def create_career(request):
+    if request.method == 'POST':
+        form = CareersForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('careers')  # Redirect to careers after successful form submission
+    else:
+        form = CareersForm()
+    return render(request, 'create_career.html', {'form': form})
+
+def create_student(request):
+    if request.method == 'POST':
+        form = StudentsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('students')  # Redirect to students after successful form submission
+    else:
+        form = StudentsForm()
+    return render(request, 'create_student.html', {'form': form})
+
+def create_teacher(request):
+    if request.method == 'POST':
+        form = TeacherForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('teachers')  # Redirect to teachers after successful form submission
+    else:
+        form = TeacherForm()
+    return render(request, 'create_teacher.html', {'form': form})

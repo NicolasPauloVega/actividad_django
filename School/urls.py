@@ -35,4 +35,11 @@ urlpatterns = [
     path('profesores/', pagina.views.teachers, name="teachers"),
     #URL para la pagina de materias, que llama a la vista 'courses' definida en 'pagina.views'
     path('materias/', pagina.views.courses, name="courses"),
+    
+ # URLs de los formularios creados 
+    path('create/materi/', pagina.views.create_materi, name='create_materi'),
+    path('create/career/', pagina.views.create_career, name='create_career'),
+    path('create/student/', pagina.views.create_student, name='create_student'),
+    path('create/teacher/', pagina.views.create_teacher, name='create_teacher'),
+    
 ]

@@ -4,20 +4,18 @@ from .models import Materi, Careers, students, Teacher
 class MateriForm(forms.ModelForm):
     class Meta:
         model = Materi
-        fields = '__all__'
-        widgets = {
-            'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}),
-        }
+        fields = ['nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'profesor']
 
 class CareersForm(forms.ModelForm):
     class Meta:
         model = Careers
-        fields = '__all__'
+        fields = ['nombre', 'descripcion', 'duración', 'tipo']
 
 class StudentsForm(forms.ModelForm):
     class Meta:
         model = students
-        fields = '__all__'
+        fields = ['nombre', 'apellido', 'fecha_nacimiento', 'correo', 'carrera']
+
         widgets = {
             'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}),
         }
@@ -25,10 +23,8 @@ class StudentsForm(forms.ModelForm):
 class TeacherForm(forms.ModelForm):
     class Meta:
         model = Teacher
-        fields = '__all__'
+        fields = ['nombre', 'apellido', 'fecha_nacimiento', 'correo', 'carrera', 'materias_imp']
+
         widgets = {
             'fecha_nacimiento': forms.DateInput(attrs={'type': 'date'}),
         }
-
-
-
