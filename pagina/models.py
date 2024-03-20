@@ -81,3 +81,12 @@ class Careers(models.Model):
             self.code = self.get_next_code()
         # Llamamos al método save de la clase padre para guardar el objeto en la base de datos
         super().save(*args, **kwargs)
+
+class students(models.Model):
+    code = models.AutoField(primary_key=True, verbose_name="codigo")
+    name = models.CharField(max_length=150, verbose_name="nombre")
+    last_name = models.CharField(max_length=150, verbose_name="apellido")
+    email = models.EmailField(max_length=254, verbose_name="correo")
+    phone = models.CharField(max_length=20, verbose_name="phone")
+    creation_date = models.DateTimeField(auto_now_add=True, verbose_name="fecha de creacion")
+    update_date = models.DateField(auto_now=True, verbose_name="fecha de actualizacion")
