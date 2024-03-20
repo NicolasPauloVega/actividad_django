@@ -6,4 +6,38 @@
 
 {% block content %}
     <h1>Materias</h1>
+
+    <br>
+
+    <p>En la Universidad Ceicotol Tolima (UCT), ofrecemos una amplia variedad de materias diseñadas para brindarte una educación integral y prepararte para tu futuro profesional. Descubre algunas de las materias que puedes estudiar con nosotros:</p>
+
+    <br>
+
+    <div class="tabla-Materias">
+
+        <table>
+
+            <thead>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Creditos</th>
+                <th>Fecha de creación</th>
+                <th>Fecha de actualización</th>
+            </thead>
+
+            <tbody>
+                {% for materias in Materi %}
+                    <th>{{materias.code}}</th>
+                    <th>{{materias.name}}</th>
+                    <th>{{materias.description}}</th>
+                    <th>{{materias.credits}}</th>
+                    <th>{{materias.create_date}}</th>
+                    <th>{{materias.update_date}}</th>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+    </div>
 {% endblock  %}
