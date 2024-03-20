@@ -7,4 +7,39 @@
 {% block content %}
     <h1>Maestros</h1>
 
+    <div class="lista-maestros">
+
+        <table class="tabla-maestros">
+
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Telefono</th>
+                    <th>Foto</th>
+                    <th>Nacimiento</th>
+                    <th>Creacion</th>
+                    <th>Actualizacion</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for teacher in teacher %}
+                <tr>
+                    <td>{{teacher.code}}</td>
+                    <td>{{teacher.name}}</td>
+                    <td>{{teacher.last_name}}</td>
+                    <td>{{teacher.email}}</td>
+                    <td>{{teacher.phone}}</td>
+                    <td>{{teacher.phono}}</td>
+                    <td>{{teacher.date_of_birth}}</td>
+                    <td>{{teacher.create_date}}</td>
+                    <td>{{teacher.update_date}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock  %}

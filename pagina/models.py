@@ -122,7 +122,7 @@ class Teacher(models.Model):
     last_name = models.CharField(max_length=150, verbose_name="apellido")
     email = models.EmailField(max_length=254, verbose_name="correo")
     phone = models.CharField(max_length=20, verbose_name="phone")
-    photo = models.ImageField(verbose_name="foto")
+    photo = models.ImageField(default='null', verbose_name="foto")
     date_of_birth = models.DateField(verbose_name="fecha de nacimiento")
     creation_date = models.DateTimeField(auto_now_add=True, verbose_name="fecha de creacion")
     update_date = models.DateField(auto_now=True, verbose_name="fecha de actualizacion")
