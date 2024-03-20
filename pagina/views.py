@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from pagina.models import Materi
 
 # Create your views here.
 
@@ -22,7 +23,10 @@ def careers(request):
     return render(request, 'careers.html')
 
 def courses(request):
-    return render(request, 'courses.html')
+    courses = Materi.objects.order_by('code')
+    return render(request, 'courses.html',{
+        'courses': courses
+    })
 
 def students(request):
     return render(request, 'students.html')

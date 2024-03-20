@@ -31,16 +31,17 @@
             </thead>
 
             <tbody>
-                {% for materias in Materi %}
-                    <tr>
-                        <td>{{materias.code}}</td>
-                        <td>{{materias.name}}</td>
-                        <td>{{materias.description}}</td>
-                        <td>{{materias.credits}}</td>
-                        <td>{{materias.create_date}}</td>
-                        <td>{{materias.update_date}}</td>
-                    </tr>
+                {% for materia in Materi %}
+                <tr>
+                    <td>{{ materia.code }}</td>
+                    <td>{{ materia.name }}</td>
+                    <td>{{ materia.description }}</td>
+                    <td>{{ materia.credits }}</td>
+                    <td>{{ materia.create_date }}</td>
+                    <td>{{ materia.update_date }}</td>
+                </tr>
                 {% endfor %}
+
             </tbody>
 
         </table>
