@@ -4,7 +4,7 @@ from django.db import models
 
 class Materi(models.Model):
     # Campo de clave primaria para el modelo Materia, se autoincrementa.
-    code = models.AutoField(primary_key=True, default=1, verbose_name="codigo")
+    code = models.AutoField(primary_key=True, verbose_name="codigo")
     # Campo para el nombre del Materi.
     name = models.CharField(max_length=150, verbose_name="nombre")
     # Campo para la descripción del Materi.
@@ -23,3 +23,53 @@ class Materi(models.Model):
         verbose_name="Materia"
         # Nombre en plural para múltiples instancias del modelo.
         verbose_name="Materias"
+
+    @classmethod
+    def get_next_code(cls):
+        # Método para obtener el próximo código disponible sumando 1 al código del último registro
+        # Ordenamos los registros por código de manera descendente y obtenemos el primer registro
+        last_record = cls.objects.order_by('-code').first()
+        if last_record:
+            # Si hay registros, sumamos 1 al código del último registro
+            return last_record.code + 1
+        else:
+            # Si no hay registros, el próximo código será 1
+            return 1
+
+    def save(self, *args, **kwargs):
+        # Método para guardar el objeto Materi en la base de datos
+        if not self.code:
+            # Verificamos si el campo code ya tiene un valor asignado
+            # Si no tiene un valor (es decir, es None o no está definido), asignamos el próximo código disponible
+            self.code = self.get_next_code()
+        # Llamamos al método save de la clase padre para guardar el objeto en la base de datos
+        super().save(*args, **kwargs)
+
+class Careers(models.Model):
+    # Campo de clave primaria para el modelo carrera, se autoincrementa.
+    code = models.AutoField(primary_key=True, verbose_name="codigo")
+    # Campo para el nombre del carrera.
+    name = models.CharField(max_length=150, verbose_name="nombre")
+    # Campo para la duracion de la carrera
+    duration = models.PositiveIntegerField(verbose_name="Duracion en la carrera")
+
+    @classmethod
+    def get_next_code(cls):
+        # Método para obtener el próximo código disponible sumando 1 al código del último registro
+        # Ordenamos los registros por código de manera descendente y obtenemos el primer registro
+        last_record = cls.objects.order_by('-code').first()
+        if last_record:
+            # Si hay registros, sumamos 1 al código del último registro
+            return last_record.code + 1
+        else:
+            # Si no hay registros, el próximo código será 1
+            return 1
+
+    def save(self, *args, **kwargs):
+        # Método para guardar el objeto Materi en la base de datos
+        if not self.code:
+            # Verificamos si el campo code ya tiene un valor asignado
+            # Si no tiene un valor (es decir, es None o no está definido), asignamos el próximo código disponible
+            self.code = self.get_next_code()
+        # Llamamos al método save de la clase padre para guardar el objeto en la base de datos
+        super().save(*args, **kwargs)
