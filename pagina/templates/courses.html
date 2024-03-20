@@ -15,27 +15,31 @@
 
     <br>
 
-    <div class="tabla-Materias">
+    <div class="lista-materias">
 
-        <table>
+        <table class="tabla-materias">
 
             <thead>
-                <th>Codigo</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Creditos</th>
-                <th>Fecha de creación</th>
-                <th>Fecha de actualización</th>
+                    <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Creditos</th>
+                    <th>Fecha de creación</th>
+                    <th>Fecha de actualización</th>
+                </tr>
             </thead>
 
             <tbody>
                 {% for materias in Materi %}
-                    <th>{{materias.code}}</th>
-                    <th>{{materias.name}}</th>
-                    <th>{{materias.description}}</th>
-                    <th>{{materias.credits}}</th>
-                    <th>{{materias.create_date}}</th>
-                    <th>{{materias.update_date}}</th>
+                    <tr>
+                        <td>{{materias.code}}</td>
+                        <td>{{materias.name}}</td>
+                        <td>{{materias.description}}</td>
+                        <td>{{materias.credits}}</td>
+                        <td>{{materias.create_date}}</td>
+                        <td>{{materias.update_date}}</td>
+                    </tr>
                 {% endfor %}
             </tbody>
 
