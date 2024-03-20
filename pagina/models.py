@@ -128,8 +128,8 @@ class Teacher(models.Model):
     update_date = models.DateField(auto_now=True, verbose_name="fecha de actualizacion")
 
     class Meta:
-        verbose_name="Estudiante"
-        verbose_name="Estudiantes"
+        verbose_name="Profesor"
+        verbose_name="Profesores"
 
     @classmethod
     def get_next_code(cls):
