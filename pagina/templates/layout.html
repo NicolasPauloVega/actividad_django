@@ -13,18 +13,25 @@
     <link rel="icon" href="{% static "img/logo(school).png" %}">
 </head>
 <body>
+
     {% comment #1 %} Encabezado de la página {% endcomment %}
     <header>
+
         {% comment #2 %} Contenedor del logotipo y el eslogan {% endcomment %}
         <div class="logotipo">
+
             {% comment #2.1 %} Imagen del logotipo obtenida de los archivos estáticos {% endcomment %}
             <img src="{% static 'img/logo(school).png' %}"> 
+
             {% comment #2.2 %} Contenedor del título y el eslogan {% endcomment %}
             <div class="titulo_slogan">
+
                 {% comment #2.2.1 %} Título de la universidad {% endcomment %}
                 <h1>La Universidad Ceicotol Tolima (UCT)</h1>
+
                 {% comment #2.2.2 %} Línea horizontal {% endcomment %}
                 <hr>
+
                 {% comment #2.2.3 %} Eslogan de la universidad {% endcomment %}
                 <h4>Formando mentes para el mañana: ¡Innovación y excelencia en cada paso!</h4>
             </div>
@@ -33,6 +40,7 @@
 
     {% comment #3 %} Barra de navegación {% endcomment %}
     <nav>
+
         {% comment #4 %} Lista de elementos de navegación {% endcomment %}
         <ul>
             {% comment #4.1 %} Elemento de navegación para la página de inicio {% endcomment %}
@@ -46,11 +54,24 @@
             {% comment #4.3 %} Elemento de navegación para la página de programas académicos {% endcomment %}
             <li><a href="{% url "academics_programs" %}">Carreras</a></li>
         </ul>
+        <ul>
+            {% comment #4.4 %} Elemento de navegación para la pagina materias{% endcomment %}
+            <li><a href="{% url "courses" %}">Materias</a></li>
+        </ul>
+        <ul>
+            {% comment #4.5 %}Elemento de navegación para la gina de Maestros{% endcomment %}
+            <li><a href="{% url "teachers" %}">Maestros</a></li>
+        </ul>
+        <ul>
+            {% comment #4.6 %}Elemento de navegación para la pagina de Estudiantes{% endcomment %}
+            <li><a href="{% url "students" %}">Estudiantes</a></li>
+        </ul>
     </nav>
 
     {% comment #5 %} Contenido principal {% endcomment %}
     <div id="contenido">
         <div class="box">
+            
             {% comment #5.1 %} Bloque de contenido específico de cada página {% endcomment %}
             {% block content %}
 
@@ -60,6 +81,7 @@
 
     {% comment #6 %} Pie de página {% endcomment %}
     <footer>
+
         {% comment #6.1 %} Información del pie de página, incluyendo el nombre del creador y la fecha actual {% endcomment %}
         Master de Framework Django &copy; Nicolas Paulo Vega ({% now 'd/m/y h:i:s' %})
     </footer>
