@@ -10,6 +10,7 @@
             {% comment 'titulo de pagina' %} Nombre de la pagina {% endcomment %}
         {% endblock %}
     </title>
+    
     <link rel="icon" href="{% static "img/logo(school).png" %}">
 </head>
 <body>
@@ -71,7 +72,7 @@
     {% comment #5 %} Contenido principal {% endcomment %}
     <div id="contenido">
         <div class="box">
-            
+
             {% comment #5.1 %} Bloque de contenido específico de cada página {% endcomment %}
             {% block content %}
 
