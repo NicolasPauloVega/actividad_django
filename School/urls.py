@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 # from pagina import views
 import pagina.views # Importa las vistas desde la aplicación 'pagina'
+from django.conf import settings
 
 # Definición de las URL de la aplicación
 urlpatterns = [
@@ -43,3 +44,7 @@ urlpatterns = [
     path('create/teacher/', pagina.views.create_teacher, name='create_teacher'),
     
 ]
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

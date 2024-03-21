@@ -13,26 +13,28 @@
 
             <thead>
                 <tr>
-                    <th>Codigo</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Correo</th>
                     <th>Telefono</th>
-                    <th>Creacion</th>
-                    <th>Actualizacion</th>
+                    <th>Foto</th>
+                    <th>Fecha de nacimiento</th>
                 </tr>
             </thead>
 
             <tbody>
                 {% for student in student %}
                 <tr>
-                    <td>{{student.code}}</td>
                     <td>{{student.name}}</td>
                     <td>{{student.last_name}}</td>
                     <td>{{student.email}}</td>
                     <td>{{student.phone}}</td>
-                    <td>{{student.create_date}}</td>
-                    <td>{{student.update_date}}</td>
+                    <td>
+                        {% if article.image != 'null' and article.image.url|length >= 1%}
+                            <img src="{{student.photo}}">
+                        {% endif %}
+                    </td>
+                    <td>{{student.date_of_birth}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
