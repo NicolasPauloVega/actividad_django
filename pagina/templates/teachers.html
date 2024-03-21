@@ -30,8 +30,8 @@
                     <td>{{teacher.email}}</td>
                     <td>{{teacher.phone}}</td>
                     <td>
-                        {% if article.image != 'null' and article.image.url|length >= 1%}
-                            {{teacher.photo}}
+                        {% if teacher.photo != 'null' and teacher.photo.url|length >= 1%}
+                            <img src="{{teacher.photo.url}}">
                         {% endif %}
                     </td>
                     <td>{{teacher.date_of_birth}}</td>
