@@ -65,7 +65,7 @@ def create_career(request):
             return redirect('careers')  # Redirect to careers after successful form submission
     else:
         form = CareersForm()
-    return render(request, 'create_career.html', {'form': form})
+    return render(request, 'create_career.html', {'form': form, 'messages': messages.get_messages(request)})
 
 def create_student(request):
     if request.method == 'POST':
