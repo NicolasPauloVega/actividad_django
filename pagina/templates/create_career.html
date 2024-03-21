@@ -10,6 +10,19 @@
     <h1>Formulario de Careers</h1>
     <form method="post">
         {% csrf_token %}
+
+        {% if messages %}
+                <script>
+                    {% for m in messages %}
+                        Swal.fire({
+                            title: '¡Enviado!',
+                            text: 'El formulario ha sido enviado con éxito.',
+                            icon: 'success'
+                        });
+                    {% endfor %}
+                </script>
+        {% endif %}
+
         {{ form.as_p }}
 
         <input type="submit" value="Enviar">

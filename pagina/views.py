@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render, HttpResponse
 from pagina.models import Materi,Careers, students, Teacher
 from .forms import MateriForm, CareersForm, StudentsForm, TeacherForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -49,6 +50,7 @@ def create_materi(request):
         form = MateriForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Materia agregada correctamente!")
             return redirect('courses')  # Redirect to courses after successful form submission
     else:
         form = MateriForm()
@@ -59,6 +61,7 @@ def create_career(request):
         form = CareersForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Carrera agregada correctamente!")
             return redirect('careers')  # Redirect to careers after successful form submission
     else:
         form = CareersForm()
@@ -69,6 +72,7 @@ def create_student(request):
         form = StudentsForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Estudiante agregado correctamente!")
             return redirect('students')  # Redirect to students after successful form submission
     else:
         form = StudentsForm()
@@ -79,6 +83,7 @@ def create_teacher(request):
         form = TeacherForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Profesor agregado correctamente!")
             return redirect('teachers')  # Redirect to teachers after successful form submission
     else:
         form = TeacherForm()

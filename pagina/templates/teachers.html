@@ -33,7 +33,7 @@
                     <td>{{teacher.last_name}}</td>
                     <td>{{teacher.email}}</td>
                     <td>{{teacher.phone}}</td>
-                    <td>{{teacher.phono}}</td>
+                    <td>{{teacher.photo}}</td>
                     <td>{{teacher.date_of_birth}}</td>
                     <td>{{teacher.create_date}}</td>
                     <td>{{teacher.update_date}}</td>
@@ -41,5 +41,6 @@
                 {% endfor %}
             </tbody>
         </table>
+        <button><a href="{% url "create_teacher" %}">Agregar Maestros</a></button>
     </div>
 {% endblock  %}
