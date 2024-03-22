@@ -211,3 +211,35 @@ footer {
 .carreras-h2{
     text-align: center;
 }
+
+.listar-maestros{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabla-maestros{
+    border-collapse: collapse; /* Colapsar bordes de celda */
+    margin: 30px 0; /* Margen */
+    font-size: 1em; /* Tamaño de fuente */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente */
+    min-width: 500px; /* Ancho mínimo */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Sombra */
+    margin: 0 auto;
+}
+
+.tabla-maestros thead tr{
+    background-color: #333333;
+    color: #D5D5D5;
+    text-align: middle;
+}
+
+.tabla-maestros th, td{
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+
+.tabla-maestros img{
+    width: 30px;
+}
