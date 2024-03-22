@@ -24,18 +24,18 @@
 
             <tbody>
                 {% for teacher in teacher %}
-                <tr>
-                    <td>{{teacher.name}}</td>
-                    <td>{{teacher.last_name}}</td>
-                    <td>{{teacher.email}}</td>
-                    <td>{{teacher.phone}}</td>
-                    <td>
-                        {% if teacher.photo != None and teacher.photo.url|length >= 1%}
-                            <img src="{{teacher.photo.url}}">
-                        {% endif %}
-                    </td>
-                    <td>{{teacher.date_of_birth}}</td>
-                </tr>
+                    <tr>
+                        <td>{{teacher.name}}</td>
+                        <td>{{teacher.last_name}}</td>
+                        <td>{{teacher.email}}</td>
+                        <td>{{teacher.phone}}</td>
+                        <td>
+                            {% if teacher.photo != 'null' and teacher.photo.url|length >= 1%}
+                                <img src="{{teacher.photo.url}}">
+                            {% endif %}
+                        </td>
+                        <td>{{teacher.date_of_birth}}</td>
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>
