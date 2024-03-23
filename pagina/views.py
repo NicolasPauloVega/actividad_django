@@ -34,10 +34,8 @@ def courses(request):
     })
 
 def student(request):
-    student = students.objects.order_by('code')
-    return render(request, 'students.html',{
-        'student': student
-    })
+    students_list = students.objects.all()
+    return render(request, 'students.html', {'students': students_list})
 
 def teachers(request):
     teacher = Teacher.objects.order_by('code')
@@ -69,7 +67,7 @@ def create_career(request):
 
 def create_student(request):
     if request.method == 'POST':
-        form = StudentsForm(request.POST)
+        form = StudentsForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, "Estudiante agregado correctamente!")
@@ -80,11 +78,10 @@ def create_student(request):
 
 def create_teacher(request):
     if request.method == 'POST':
-        form = TeacherForm(request.POST)
+        form = TeacherForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, "Profesor agregado correctamente!")
-            return redirect('teachers')  # Redirect to teachers after successful form submission
+            return redirect('teachers')
     else:
         form = TeacherForm()
     return render(request, 'create_teacher.html', {'form': form})
