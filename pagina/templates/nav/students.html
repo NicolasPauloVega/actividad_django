@@ -41,20 +41,16 @@
                     </td>
                     <td>{{ student.date_of_birth }}</td>
                     <td>
-                        <form action="{% url 'eliminar_estudiante' student.id %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="btn-eliminar">
-                                <i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i>
-                            </button>
-                        </form>
+                        <button>
+                            <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
+                        </button>
                     </td>
                     <td>
-                        <form action="{% url 'actualizar_estudiante' student.id %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="btn-actualizar">
+                        <button>
+                            <a href="{% url 'edit_student' student.code %}">
                                 <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
-                            </button>
-                        </form>
+                            </a>
+                        </button>
                     </td>
                 </tr>
                 {% endfor %}

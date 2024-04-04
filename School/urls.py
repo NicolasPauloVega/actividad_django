@@ -45,6 +45,15 @@ urlpatterns = [
     
     #Urls de edicion
     path('editar-carrera/<int:code>/', pagina.views.edit_careers, name='edit_career'),
+    path('editar-materia/<int:code>/', pagina.views.edit_courses, name='edit_course'),
+    path('editar-estudinte/<int:code>/', pagina.views.edit_student, name='edit_student'),
+    path('editar-maestro/<int:code>/', pagina.views.edit_teachers, name='edit_teacher'),
+
+    #URLs de actualizacion
+    path('actualizar-carrera/<int:code>/', pagina.views.update_careers, name='update_career'),
+    path('actualizar-materia/<int:code>/', pagina.views.update_courses, name='update_course'),
+    path('actualizar-estudiante/<int:code>/', pagina.views.update_student, name='update_student'),
+    path('actualizar-maestro/<int:code>/', pagina.views.update_teacher, name='update_teacher'),
 ]
 
 if settings.DEBUG:

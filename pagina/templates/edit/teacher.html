@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
 {% load static %}
 
-{% block title %} Editar carrera {% endblock %}
+{% block title %} Editar maestro {% endblock %}
 
 {% block content %}
-    <h1>editar Careers</h1>
-    <form action="{% url 'update_career' career.code %}" method="post">
+    <h1>editar maestro</h1>
+    <form action="{% url 'update_teacher' teacher.code %}" method="post">
         {% csrf_token %}
         {{ form.as_p }}
 
         <button type="submit">Guardar cambios</button>
     </form>
-    <a href="{% url 'careers' %}">cancelar</a>
+    <a href="{% url 'teachers' %}">cancelar</a>
 {% endblock %}

@@ -35,6 +35,13 @@ def edit_careers(request, code):
     form = CareersForm(instance=career)
     return render(request, 'edit/career.html', {'form': form, 'career': career})
 
+def update_careers(request, code):
+    career = Careers.objects.get(pk=code)
+    form = CareersForm(request.POST, instance=career)
+    if form.is_valid():
+        form.save()
+    career = Careers.objects.order_by('code')
+    return render(request, 'nav/careers.html', {'career': career})
 
 # Funcion del boton de eliminar    
 def eliminarCareers(request, id):
@@ -56,7 +63,22 @@ def courses(request):
     return render(request, 'nav/courses.html',{
         'materi': materi
     })
-    
+
+#actulizar o editar curso
+def edit_courses(request, code):
+    course = Materi.objects.filter(pk=code).first()
+    form = MateriForm(instance=course)
+    return render(request, 'edit/course.html', {'form': form, 'course': course})
+
+def update_courses(request, code):
+    course = Materi.objects.filter(pk=code).first()
+    form = MateriForm(request.POST, instance=course)
+    if form.is_valid():
+        form.save()
+    course = Materi.objects.order_by('code')
+    return render(request, 'nav/courses.html', {'course': course})
+
+#elimina curso    
 def eliminarMateria(request, id):
     # Obtener la materia por su ID
     materia = Materi.objects.get(id=id)
@@ -70,10 +92,24 @@ def eliminarMateria(request, id):
     else:
         # Manejar el caso donde la materia no existe
         return render(request, 'error.html', {'message': 'Materia no encontrada'})
-        
+
+
 def student(request):
     students_list = students.objects.all()
     return render(request, 'nav/students.html', {'students': students_list})
+
+def edit_student(request, code):
+    student = students.objects.filter(pk=code).first()
+    form = students(instance=student)
+    return render(request, 'edit/student', {'form': form, 'student': student})
+
+def update_student(request, code):
+    student = Materi.objects.filter(pk=code).first()
+    form = MateriForm(request.POST, instance=student)
+    if form.is_valid():
+        form.save()
+    student = students.objects.order_by('code')
+    return render(request, 'nav/student.html', {'student': student})
 
 def eliminarEstudiante(request, id):
     # Obtener el estudiante por su ID
@@ -95,6 +131,19 @@ def teachers(request):
         'teacher': teacher
     })
     
+def edit_teachers(request, code):
+    teacher = Teacher.objects.filter(pk=code).first()
+    form = Teacher(instance=teacher)
+    return render(request, 'edit/student', {'form': form, 'teacher': teacher})
+
+def update_teacher(request, code):
+    teacher = Teacher.objects.filter(pk=code).first()
+    form = TeacherForm(request.POST, instance=teacher)
+    if form.is_valid():
+        form.save()
+    teacher = Teacher.objects.order_by('code')
+    return render(request, 'nav/teacher.html', {'teacher': teacher})
+
 def eliminarMaestro(request, id):
     # Obtener el maestro por su ID
     maestro = Teacher.objects.get(id=id)

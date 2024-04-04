@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %} Editar estudiante {% endblock %}
+
+{% block content %}
+    <h1>editar estudiante</h1>
+    <form action="{% url 'update_student' student.code %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Guardar cambios</button>
+    </form>
+    <a href="{% url 'students' %}">cancelar</a>
+{% endblock %}
