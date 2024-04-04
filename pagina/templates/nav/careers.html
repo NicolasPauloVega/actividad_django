@@ -52,12 +52,14 @@
                     <td>{{ careers.name }}</td>
                     <td>{{ careers.duration }}</td>
                     <td>
-                        <button>
-                            <a href="#">
+                        <form action="{% url 'eliminar_career' carrera.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-eliminar">
                                 <i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i>
-                            </a>
-                        </button>
+                            </button>
+                        </form>
                     </td>
+                    
                     <td>
                         <button>
                             <a href="#">
