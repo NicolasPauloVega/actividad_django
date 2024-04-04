@@ -33,10 +33,6 @@ def courses(request):
         'materi': materi
     })
     
-def eliminarCourses(request):
-    
-    
-
 def student(request):
     students_list = students.objects.all()
     return render(request, 'nav/students.html', {'students': students_list})
