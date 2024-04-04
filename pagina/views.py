@@ -27,6 +27,11 @@ def careers(request):
         'career': career
     })
 
+def edit_careers(request, code):
+    career = Careers.objects.filter(pk=code).first()
+    form = CareersForm(instance=career)
+    return render(request, 'edit/career.html', {'form': form, 'career': career})
+
 def courses(request):
     materi = Materi.objects.order_by('code')
     return render(request, 'nav/courses.html',{

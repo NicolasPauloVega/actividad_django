@@ -38,11 +38,13 @@ urlpatterns = [
     path('materias/', pagina.views.courses, name="courses"),
     
  # URLs de los formularios creados 
-    path('create/materi/', pagina.views.create_materi, name='create_materi'),
-    path('create/career/', pagina.views.create_career, name='create_career'),
-    path('create/student/', pagina.views.create_student, name='create_student'),
-    path('create/teacher/', pagina.views.create_teacher, name='create_teacher'),
+    path('agregar-materia/', pagina.views.create_materi, name='create_materi'),
+    path('agregar-carrera/', pagina.views.create_career, name='create_career'),
+    path('agregar-estudiante/', pagina.views.create_student, name='create_student'),
+    path('agregar-maestro/', pagina.views.create_teacher, name='create_teacher'),
     
+    #Urls de edicion
+    path('editar-carrera/<int:code>/', pagina.views.edit_careers, name='edit_career'),
 ]
 
 if settings.DEBUG:
