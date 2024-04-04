@@ -32,6 +32,10 @@ def courses(request):
     return render(request, 'nav/courses.html',{
         'materi': materi
     })
+    
+def eliminarCourses(request):
+    
+    
 
 def student(request):
     students_list = students.objects.all()
@@ -85,3 +89,4 @@ def create_teacher(request):
     else:
         form = TeacherForm()
     return render(request, 'forms/create_teacher.html', {'form': form})
+
