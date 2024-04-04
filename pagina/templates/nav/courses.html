@@ -27,6 +27,8 @@
                     <th>Creditos</th>
                     <th>Fecha de creación</th>
                     <th>Fecha de actualización</th>
+                    <th>Eliminar</th>
+                    <th>Actualizar</th>
                 </tr>
             </thead>
 
@@ -39,8 +41,20 @@
                     <td>{{ materia.credits }}</td>
                     <td>{{ materia.Creation_date }}</td>
                     <td>{{ materia.update_date }}</td>
-                    <td><button><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></button></td>
-                    <td><button><i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i></button></td>
+                    <td>
+                        <button>
+                            <a href="#">
+                                <i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i>
+                            </a>
+                        </button>
+                    </td>
+                    <td>
+                        <button>
+                            <a href="#">
+                                <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
+                            </a>
+                        </button>
+                    </td>
                 </tr>
                 {% endfor %}
 

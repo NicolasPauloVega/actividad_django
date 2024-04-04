@@ -19,6 +19,8 @@
                     <th>Telefono</th>
                     <th>Foto</th>
                     <th>Fecha de nacimiento</th>
+                    <th>Eliminar</th>
+                    <th>Actualizar</th>
                 </tr>
             </thead>
 
@@ -31,14 +33,26 @@
                     <td>{{ student.phone }}</td>
                     <td>
                         {% if student.photo %}
-                            <img src="{{ student.photo.url }}" alt="Foto de {{ student.name }}">
+                            <img style="width: 40px;" src="{{ student.photo.url }}" alt="Foto de {{ student.name }}">
                         {% else %}
                             No hay foto disponible
                         {% endif %}
                     </td>
                     <td>{{ student.date_of_birth }}</td>
-                    <td><button><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></button></td>
-                    <td><button><i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i></button></td>
+                    <td>
+                        <button>
+                            <a href="#">
+                                <i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i>
+                            </a>
+                        </button>
+                    </td>
+                    <td>
+                        <button>
+                            <a href="#">
+                                <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
+                            </a>
+                        </button>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
