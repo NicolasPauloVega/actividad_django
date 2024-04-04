@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% load static %}
 
 {% block title %}
     Maestros
@@ -27,34 +28,36 @@
             <tbody>
                 {% for teacher in teacher %}
                 <tr>
-                    <td>{{teacher.name}}</td>
-                    <td>{{teacher.last_name}}</td>
-                    <td>{{teacher.email}}</td>
-                    <td>{{teacher.phone}}</td>
+                    <td>{{ teacher.name }}</td>
+                    <td>{{ teacher.last_name }}</td>
+                    <td>{{ teacher.email }}</td>
+                    <td>{{ teacher.phone }}</td>
                     <td>
-                        {% if teacher.photo != 'null' and teacher.photo.url|length >= 1%}
-                            <img style="width: 40px;" src="{{teacher.photo.url}}">
+                        {% if teacher.photo %}
+                            <img style="width: 40px;" src="{{ teacher.photo.url }}" alt="Foto de {{ teacher.name }}">
                         {% endif %}
                     </td>
-                    <td>{{teacher.date_of_birth}}</td>
+                    <td>{{ teacher.date_of_birth }}</td>
                     <td>
-                        <button>
-                            <a href="#">
+                        <form action="{% url 'eliminar_maestro' teacher.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-eliminar">
                                 <i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i>
-                            </a>
-                        </button>
+                            </button>
+                        </form>
                     </td>
                     <td>
-                        <button>
-                            <a href="#">
+                        <form action="{% url 'actualizar_maestro' teacher.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-actualizar">
                                 <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
-                            </a>
-                        </button>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <button><a href="{% url "create_teacher" %}">Agregar Maestros</a></button>
+        <button><a href="{% url 'create_teacher' %}">Agregar Maestros</a></button>
     </div>
 {% endblock  %}
