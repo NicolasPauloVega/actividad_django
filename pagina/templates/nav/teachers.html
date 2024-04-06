@@ -33,8 +33,9 @@
                     </td>
                     <td>{{ teacher.name }}</td>
                     <td>{{ teacher.last_name }}</td>
-                    <td>{% for matery in matery %}
-                            {{ matery }}
+                    {% comment 'mostrar nombre' %} creamos un bucle el cual va a iterar sobre la lista de nombres de la tabla materias {% endcomment %}
+                    <td>{% for materi in matery %}
+                            {{ materi }}
                             {% if not forloop.last %}, {% endif %}
                         {% endfor %}
                     </td>
