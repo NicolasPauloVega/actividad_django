@@ -21,12 +21,10 @@
 
             <thead>
                 <tr>
-                    <th>Codigo</th>
                     <th>Nombre</th>
                     <th>Descripcion</th>
                     <th>Creditos</th>
-                    <th>Fecha de creación</th>
-                    <th>Fecha de actualización</th>
+                    <th>Maestro encargado</th>
                     <th>Eliminar</th>
                     <th>Actualizar</th>
                 </tr>
@@ -35,12 +33,10 @@
             <tbody>
                 {% for materia in materi %}
                 <tr>
-                    <td>{{ materia.code }}</td>
                     <td>{{ materia.name }}</td>
                     <td>{{ materia.description }}</td>
                     <td>{{ materia.credits }}</td>
-                    <td>{{ materia.Creation_date }}</td>
-                    <td>{{ materia.update_date }}</td>
+                    <td></td>
                     <td>
                         <button>
                             <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>

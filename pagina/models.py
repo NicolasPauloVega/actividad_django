@@ -1,7 +1,9 @@
 from django.db import models
 
-# Create your models here.
+#ManyToMany --> relaciones muchos a muchos de Django
+#ForeignKey --> Uno a Uno
 
+# Create your models here.
 class Materi(models.Model):
     # Campo de clave primaria para el modelo Materia, se autoincrementa.
     code = models.AutoField(primary_key=True, verbose_name="codigo")
@@ -16,13 +18,16 @@ class Materi(models.Model):
     # Campo para la fecha de actualización del Materi, se actualiza automáticamente a la fecha actual cuando se guarda una instancia.
     update_date = models.DateField(auto_now=True, verbose_name="fecha de actualización")
 
+    def __str__(self):
+        return f"{self.name}"
+
     class Meta:
         # Clase Meta para proporcionar metadatos para el modelo Materia.
         #db_table=""
         # Nombre legible para una instancia única del modelo.
         verbose_name="Materia"
         # Nombre en plural para múltiples instancias del modelo.
-        verbose_name="Materias"
+        verbose_name_plural="Materias"
 
     @classmethod
     def get_next_code(cls):
@@ -52,6 +57,9 @@ class Careers(models.Model):
     name = models.CharField(max_length=150, verbose_name="nombre")
     # Campo para la duracion de la carrera
     duration = models.PositiveIntegerField(verbose_name="Duracion en la carrera")
+
+    def __str__(self):
+        return f"{self.name}"
     
     class Meta:
         # Clase Meta para proporcionar metadatos para el modelo Materia.
@@ -59,7 +67,7 @@ class Careers(models.Model):
         # Nombre legible para una instancia única del modelo.
         verbose_name="Carrera"
         # Nombre en plural para múltiples instancias del modelo.
-        verbose_name="Carreras"
+        verbose_name_plural="Carreras"
 
     @classmethod
     def get_next_code(cls):
@@ -92,10 +100,14 @@ class students(models.Model):
     date_of_birth = models.DateField(null=True, blank=True,verbose_name="fecha de nacimiento")
     creation_date = models.DateTimeField(auto_now_add=True, verbose_name="fecha de creacion")
     update_date = models.DateField(auto_now=True, verbose_name="fecha de actualizacion")
+    careers = models.ForeignKey(Careers, null=True,blank=True, on_delete=models.CASCADE, verbose_name="carrera")
+
+    def __str__(self):
+        return f"{self.name} {self.last_name}"
 
     class Meta:
         verbose_name="Estudiante"
-        verbose_name="Estudiantes"
+        verbose_name_plural="Estudiantes"
 
     @classmethod
     def get_next_code(cls):
@@ -129,9 +141,12 @@ class Teacher(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True, verbose_name="fecha de creacion")
     update_date = models.DateField(auto_now=True, verbose_name="fecha de actualizacion")
 
+    def __str__(self):
+        return f"{self.name} {self.last_name}"
+
     class Meta:
         verbose_name="Profesor"
-        verbose_name="Profesores"
+        verbose_name_plural="Profesores"
 
     @classmethod
     def get_next_code(cls):
