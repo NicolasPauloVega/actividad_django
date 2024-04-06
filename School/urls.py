@@ -33,7 +33,7 @@ urlpatterns = [
     #URL para la pagina de estudiantes, que llama a la vista 'students' definida en 'pagina.views'
     path('estudiantes/', pagina.views.student, name="students"),
     #URL para la pagina de maestros, que llama a la vista 'teachers' definida en 'pagina.views'
-    path('profesores/', pagina.views.teachers, name="teachers"),
+    path('maestros/', pagina.views.teachers, name="teachers"),
     #URL para la pagina de materias, que llama a la vista 'courses' definida en 'pagina.views'
     path('materias/', pagina.views.courses, name="courses"),
     

@@ -127,8 +127,10 @@ def eliminarEstudiante(request, id):
 
 def teachers(request):
     teacher = Teacher.objects.order_by('code')
+    matery = Materi.objects.values_list('name', flat=True)
     return render(request, 'nav/teachers.html', {
-        'teacher': teacher
+        'teacher': teacher,
+        'matery': matery
     })
     
 def edit_teachers(request, code):

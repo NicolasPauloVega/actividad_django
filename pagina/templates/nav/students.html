@@ -14,25 +14,18 @@
 
             <thead>
                 <tr>
+                    <th>Foto</th>
                     <th>Nombre</th>
                     <th>Apellido</th>
-                    <th>Correo</th>
-                    <th>Telefono</th>
-                    <th>Foto</th>
-                    <th>Fecha de nacimiento</th>
+                    <th>carrera Actual</th>
                     <th>Eliminar</th>
                     <th>Actualizar</th>
-                    <th>Carrera</th>
                 </tr>
             </thead>
 
             <tbody>
                 {% for student in students %}
                 <tr>
-                    <td>{{ student.name }}</td>
-                    <td>{{ student.last_name }}</td>
-                    <td>{{ student.email }}</td>
-                    <td>{{ student.phone }}</td>
                     <td>
                         {% if student.photo %}
                             <img style="width: 40px;" src="{{ student.photo.url }}" alt="Foto de {{ student.name }}">
@@ -40,7 +33,9 @@
                             No hay foto disponible
                         {% endif %}
                     </td>
-                    <td>{{ student.date_of_birth }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.last_name }}</td>
+                    <td>{{student.careers}}</td>
                     <td>
                         <button>
                             <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
@@ -53,7 +48,6 @@
                             </a>
                         </button>
                     </td>
-                    <td>{{student.careers}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
