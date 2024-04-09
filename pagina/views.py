@@ -21,6 +21,8 @@ def future(request):
     # Retorna la plantilla 'future.html' renderizada
     return render(request, 'nav/future.html')
 
+#--------------------------------------------------------------------------------------------------------------------
+
 # Vista para los programas académicos
 def careers(request):
     career = Careers.objects.order_by('code')
@@ -58,6 +60,20 @@ def eliminarCareers(request, id):
         # Manejar el caso donde la carrera no existe
         return render(request, 'error.html', {'message': 'Carrera no encontrada'})
 
+def create_career(request):
+    if request.method == 'POST':
+        form = CareersForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Carrera agregada correctamente!")
+            return redirect('careers')  # Redirect to careers after successful form submission
+    else:
+        form = CareersForm()
+    return render(request, 'forms/create_career.html', {'form': form, 'messages': messages.get_messages(request)})
+
+
+#--------------------------------------------------------------------------------------------------------------------
+
 def courses(request):
     materi = Materi.objects.order_by('code')
     return render(request, 'nav/courses.html',{
@@ -92,7 +108,19 @@ def eliminarMateria(request, id):
     else:
         # Manejar el caso donde la materia no existe
         return render(request, 'error.html', {'message': 'Materia no encontrada'})
+    
+def create_materi(request):
+    if request.method == 'POST':
+        form = MateriForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Materia agregada correctamente!")
+            return redirect('courses')  # Redirect to courses after successful form submission
+    else:
+        form = MateriForm()
+    return render(request, 'forms/create_materi.html', {'form': form})
 
+#--------------------------------------------------------------------------------------------------------------------
 
 def student(request):
     students_list = students.objects.all()
@@ -124,6 +152,19 @@ def eliminarEstudiante(request, id):
     else:
         # Manejar el caso donde el estudiante no existe
         return render(request, 'error.html', {'message': 'Estudiante no encontrado'})
+    
+def create_student(request):
+    if request.method == 'POST':
+        form = StudentsForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Estudiante agregado correctamente!")
+            return redirect('students')  # Redirect to students after successful form submission
+    else:
+        form = StudentsForm()
+    return render(request, 'forms/create_student.html', {'form': form})
+
+#--------------------------------------------------------------------------------------------------------------------
 
 def teachers(request):
     teacher = Teacher.objects.order_by('code')
@@ -159,39 +200,6 @@ def eliminarMaestro(request, id):
     else:
         # Manejar el caso donde el maestro no existe
         return render(request, 'error.html', {'message': 'Maestro no encontrado'})
-
-def create_materi(request):
-    if request.method == 'POST':
-        form = MateriForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Materia agregada correctamente!")
-            return redirect('courses')  # Redirect to courses after successful form submission
-    else:
-        form = MateriForm()
-    return render(request, 'forms/create_materi.html', {'form': form})
-
-def create_career(request):
-    if request.method == 'POST':
-        form = CareersForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Carrera agregada correctamente!")
-            return redirect('careers')  # Redirect to careers after successful form submission
-    else:
-        form = CareersForm()
-    return render(request, 'forms/create_career.html', {'form': form, 'messages': messages.get_messages(request)})
-
-def create_student(request):
-    if request.method == 'POST':
-        form = StudentsForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Estudiante agregado correctamente!")
-            return redirect('students')  # Redirect to students after successful form submission
-    else:
-        form = StudentsForm()
-    return render(request, 'forms/create_student.html', {'form': form})
 
 def create_teacher(request):
     if request.method == 'POST':
