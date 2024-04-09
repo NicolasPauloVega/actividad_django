@@ -62,7 +62,7 @@ class TeacherForm(forms.ModelForm):
         #Nombre personalizado para cada campo del formulario
         labels = {
             'name': 'Nombre',
-            'last_name': 'apellido',
+            'last_name': 'Apellido',
             'email': 'Correo electronico',
             'phone': 'Telefono',
             'photo': 'Foto',

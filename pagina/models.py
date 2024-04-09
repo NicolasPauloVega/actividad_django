@@ -154,3 +154,27 @@ class Teacher(models.Model):
         if not self.code:
             self.code = self.get_next_code()
         super().save(*args, **kwargs)
+
+
+# #Tabla de relacion muchos a muchos
+# class Teacher_Materi(models.Model):
+#     code = models.AutoField(primary_key=True, verbose_name="codigo")
+#     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, verbose_name="maestro")
+#     materi = models.ForeignKey(Materi, on_delete=models.CASCADE, verbose_name="materia")
+
+#     class Meta:
+#         verbose_name="Maestro y Materia"
+#         verbose_name_plural="Maestros y Materias"
+
+#     @classmethod
+#     def get_next_code(cls):
+#         last_record = cls.objects.order_by('-code').first()
+#         if last_record:
+#             return last_record.code + 1
+#         else:
+#             return 1
+
+#     def save(self, *args, **kwargs):
+#         if not self.code:
+#             self.code = self.get_next_code()
+#         super().save(*args, **kwargs)
