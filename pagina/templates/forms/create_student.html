@@ -6,11 +6,13 @@
 {% endblock  %}
 
 {% block content %}
-    <h1>Formulario de Students</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
+    <div class="form-student">
+        <h1>Formulario de Students</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-        <input type="submit" value="Enviar">
-    </form>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 {% endblock  %}

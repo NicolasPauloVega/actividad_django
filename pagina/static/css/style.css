@@ -409,6 +409,183 @@ nav ul li a:hover {
     background-color: #D4B300;
 }
 
+/* Estilos para el título del formulario */
+.box .form-careers h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para los párrafos del formulario */
+.box .form-careers p {
+    margin-bottom: 15px;
+}
+
+/* Estilos para las etiquetas del formulario */
+.box .form-careers label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.box .form-careers input[type="text"],
+.box .form-careers input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar del formulario */
+.box .form-careers input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box .form-careers input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para los párrafos del formulario */
+.box .forms-matery p {
+    margin-bottom: 15px;
+}
+
+/* Estilos para las etiquetas del formulario */
+.box .forms-matery label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.box .forms-matery input[type="text"],
+.box .forms-matery input[type="number"],
+.box .forms-matery textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar del formulario */
+.box .forms-matery input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box .forms-matery input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el título del formulario */
+.box .form-student h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para los párrafos del formulario */
+.box .form-student p {
+    margin-bottom: 15px;
+}
+
+/* Estilos para las etiquetas del formulario */
+.box .form-student label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.box .form-student input[type="text"],
+.box .form-student input[type="email"],
+.box .form-student input[type="date"],
+.box .form-student input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar del formulario */
+.box .form-student input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box .form-student input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el título del formulario */
+.box .form-teacher h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para los párrafos del formulario */
+.box .form-teacher p {
+    margin-bottom: 15px;
+}
+
+/* Estilos para las etiquetas del formulario */
+.box .form-teacher label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.box .form-teacher input[type="text"],
+.box .form-teacher input[type="email"],
+.box .form-teacher input[type="date"],
+.box .form-teacher input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar del formulario */
+.box .form-teacher input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box .form-teacher input[type="submit"]:hover {
+    background-color: #45a049;
+}
 
 /* Estilos del pie de página */
 footer {
