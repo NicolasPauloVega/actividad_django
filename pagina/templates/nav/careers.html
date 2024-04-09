@@ -7,74 +7,77 @@
 
 {% block content %}
     {% comment #1 %} Contenido de la pagina {% endcomment %}
-    <h1>¡Te damos la bienvenida a la sección de Carreras en la Universidad Ceicotol Tolima (UCT)!</h1>
+    <div class="content-Ca">
+        <h1>¡Te damos la bienvenida a la sección de Carreras en la Universidad Ceicotol Tolima (UCT)!</h1>
 
-    <br>
+        <br>
 
-    <p>En nuestra universidad, te ofrecemos la llave hacia un futuro lleno de oportunidades y realización profesional. Aquí, encontrarás una amplia variedad de carreras de pregrado y posgrado diseñadas para impulsar tu crecimiento y desarrollo académico.</p>
+        <p>En nuestra universidad, te ofrecemos la llave hacia un futuro lleno de oportunidades y realización profesional. Aquí, encontrarás una amplia variedad de carreras de pregrado y posgrado diseñadas para impulsar tu crecimiento y desarrollo académico.</p>
 
-    <br>
+        <br>
 
-    <p>Desde Ingeniería Industrial hasta Fisioterapia, pasando por Administración de Empresas, nuestras carreras están diseñadas para formar profesionales altamente capacitados y preparados para enfrentar los desafíos del mundo actual.</p>
+        <p>Desde Ingeniería Industrial hasta Fisioterapia, pasando por Administración de Empresas, nuestras carreras están diseñadas para formar profesionales altamente capacitados y preparados para enfrentar los desafíos del mundo actual.</p>
 
-    <br>
+        <br>
 
-    <p>Además, nuestros programas de posgrado, como la Maestría en Administración de Empresas y la Maestría en Ingeniería de Sistemas, te brindan la oportunidad de profundizar tus conocimientos y habilidades en áreas específicas, preparándote para destacarte en tu campo de estudio.</p>
+        <p>Además, nuestros programas de posgrado, como la Maestría en Administración de Empresas y la Maestría en Ingeniería de Sistemas, te brindan la oportunidad de profundizar tus conocimientos y habilidades en áreas específicas, preparándote para destacarte en tu campo de estudio.</p>
 
-    <br>
+        <br>
 
-    <p>Explora nuestras opciones, descubre tu pasión y da el primer paso hacia un futuro brillante. ¡Estamos aquí para guiarte en cada paso del camino!</p>
+        <p>Explora nuestras opciones, descubre tu pasión y da el primer paso hacia un futuro brillante. ¡Estamos aquí para guiarte en cada paso del camino!</p>
 
-    <br>
+        <br>
 
-    <h2 class="carreras-h2">Lista de carreras</h2>
+        <h2 class="carreras-h2">Lista de carreras</h2>
 
-    <br>
+        <br>
 
-    <div class="lista-carreras">
+        <div class="lista-carreras">
 
-        <table class="tabla-carreras">
+            <table class="tabla-carreras">
 
-            <thead>
+                <thead>
+                        <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Duracion (semana)</th>
+                        <th>Eliminar</th>
+                        <th>Actualizar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for careers in career %}
                     <tr>
-                    <th>Codigo</th>
-                    <th>Nombre</th>
-                    <th>Duracion (semana)</th>
-                    <th>Eliminar</th>
-                    <th>Actualizar</th>
-                </tr>
-            </thead>
+                        <td>{{ careers.code }}</td>
+                        <td>{{ careers.name }}</td>
+                        <td>{{ careers.duration }}</td>
+                        <td>
+                            <button>
+                                <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
+                            </button>
+                        </td>
+                        
+                        <td>
+                            <button>
+                                <a href="{% url 'edit_career' careers.code %}">
+                                    <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
+                                </a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
 
-            <tbody>
-                {% for careers in career %}
-                <tr>
-                    <td>{{ careers.code }}</td>
-                    <td>{{ careers.name }}</td>
-                    <td>{{ careers.duration }}</td>
-                    <td>
-                        <button>
-                            <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
-                        </button>
-                    </td>
-                    
-                    <td>
-                        <button>
-                            <a href="{% url 'edit_career' careers.code %}">
-                                <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
-                            </a>
-                        </button>
-                    </td>
-                </tr>
-                {% endfor %}
+                </tbody>
 
-            </tbody>
+            </table>
 
-        </table>
+            <button>
+                <a href="{% url "create_career" %}">Agregar Carreras</a>
+            </button>
 
-        <button>
-            <a href="{% url "create_career" %}">Agregar Carreras</a>
-        </button>
+        </div>
 
     </div>
-
+    
 {% endblock  %}

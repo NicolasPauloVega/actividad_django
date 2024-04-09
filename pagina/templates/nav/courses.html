@@ -6,55 +6,56 @@
 {% endblock  %}
 
 {% block content %}
+    <div class="content-Co">
+        <h1 class="Materias">Materias</h1>
 
-    <h1 class="Materias">Materias</h1>
+        <br>
 
-    <br>
+        <p>En la Universidad Ceicotol Tolima (UCT), ofrecemos una amplia variedad de materias diseñadas para brindarte una educación integral y prepararte para tu futuro profesional. Descubre algunas de las materias que puedes estudiar con nosotros:</p>
 
-    <p>En la Universidad Ceicotol Tolima (UCT), ofrecemos una amplia variedad de materias diseñadas para brindarte una educación integral y prepararte para tu futuro profesional. Descubre algunas de las materias que puedes estudiar con nosotros:</p>
+        <br>
 
-    <br>
+        <div class="lista-materias">
 
-    <div class="lista-materias">
+            <table class="tabla-materias">
 
-        <table class="tabla-materias">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Creditos</th>
+                        <th>Eliminar</th>
+                        <th>Actualizar</th>
+                    </tr>
+                </thead>
 
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Descripcion</th>
-                    <th>Creditos</th>
-                    <th>Eliminar</th>
-                    <th>Actualizar</th>
-                </tr>
-            </thead>
+                <tbody>
+                    {% for materia in materi %}
+                    <tr>
+                        <td>{{ materia.name }}</td>
+                        <td>{{ materia.description }}</td>
+                        <td>{{ materia.credits }}</td>
+                        <td>
+                            <button>
+                                <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
+                            </button>
+                        </td>
+                        <td>
+                            <button>
+                                <a href="{% url 'edit_course' materia.code %}">
+                                    <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
+                                </a>
+                            </button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
 
-            <tbody>
-                {% for materia in materi %}
-                <tr>
-                    <td>{{ materia.name }}</td>
-                    <td>{{ materia.description }}</td>
-                    <td>{{ materia.credits }}</td>
-                    <td>
-                        <button>
-                            <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
-                        </button>
-                    </td>
-                    <td>
-                        <button>
-                            <a href="{% url 'edit_course' materia.code %}">
-                                <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
-                            </a>
-                        </button>
-                        </form>
-                    </td>
-                </tr>
-                {% endfor %}
+                </tbody>
 
-            </tbody>
+            </table>
 
-        </table>
-
-        <button><a href="{% url 'create_materi' %}">Agregar Materias</a></button>
+            <button><a href="{% url 'create_materi' %}">Agregar Materias</a></button>
+        </div>
     </div>
 {% endblock  %}

@@ -6,55 +6,57 @@
 {% endblock  %}
 
 {% block content %}
-    <h1>Maestros</h1>
+    <div class="cotent-T">
+        <h1>Maestros</h1>
+        <div class="lista-maestros">
 
-    <div class="lista-maestros">
-
-        <table class="tabla-maestros">
-
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Foto</th>
-                    <th>Materias</th>
-                    <th>Eliminar</th>
-                    <th>Actualizar</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {% for teacher in teacher %}
-                <tr>
-                    <td>
-                        {% if teacher.photo %}
-                            <img src="{{ teacher.photo.url }}" alt="Foto de {{ teacher.name }}">
-                        {% endif %}
-                    </td>
-                    <td>{{ teacher.name }}</td>
-                    <td>{{ teacher.last_name }}</td>
-                    {% comment 'mostrar nombre' %} creamos un bucle el cual va a iterar sobre la lista de nombres de la tabla materias {% endcomment %}
-                    <td>{% for materi in matery %}
-                            {{ materi }}
-                            {% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    </td>
-                    <td>
-                        <button>
-                            <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
-                        </button>
-                    </td>
-                    <td>
-                        <button>
-                            <a href="{% url 'edit_teacher' teacher.code %}">
-                                <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
-                            </a>
-                        </button>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <button class="boton"><a href="{% url 'create_teacher' %}">Agregar Maestros</a></button>
+            <table class="tabla-maestros">
+    
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Foto</th>
+                        <th>Materias</th>
+                        <th>Eliminar</th>
+                        <th>Actualizar</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    {% for teacher in teacher %}
+                    <tr>
+                        <td>
+                            {% if teacher.photo %}
+                                <img src="{{ teacher.photo.url }}" alt="Foto de {{ teacher.name }}">
+                            {% endif %}
+                        </td>
+                        <td>{{ teacher.name }}</td>
+                        <td>{{ teacher.last_name }}</td>
+                        {% comment 'mostrar nombre' %} creamos un bucle el cual va a iterar sobre la lista de nombres de la tabla materias {% endcomment %}
+                        <td>{% for materi in matery %}
+                                {{ materi }}
+                                {% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>
+                            <button>
+                                <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
+                            </button>
+                        </td>
+                        <td>
+                            <button>
+                                <a href="{% url 'edit_teacher' teacher.code %}">
+                                    <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
+                                </a>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button class="boton"><a href="{% url 'create_teacher' %}">Agregar Maestros</a></button>
+        </div>
     </div>
+
 {% endblock  %}

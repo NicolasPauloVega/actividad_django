@@ -54,6 +54,12 @@ urlpatterns = [
     path('actualizar-materia/<int:code>/', pagina.views.update_courses, name='update_course'),
     path('actualizar-estudiante/<int:code>/', pagina.views.update_student, name='update_student'),
     path('actualizar-maestro/<int:code>/', pagina.views.update_teacher, name='update_teacher'),
+
+    #URLs de eliminar
+    path('eliminar-carrera/<int:code>/', pagina.views.eliminarCareers, name="delete_careers"),
+    path('eliminar-materia/<int:code>/', pagina.views.eliminarMateria, name="delete_matery"),
+    path('eliminar-estudiante/<int:code>/', pagina.views.eliminarEstudiante, name="delete_student"),
+    path('eliminar-maestro/<int:code>/', pagina.views.eliminarMaestro, name="delete_teacher"),
 ]
 
 if settings.DEBUG:

@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render, HttpResponse
+from django.shortcuts import redirect, render, HttpResponse, get_object_or_404
 from pagina.models import Materi,Careers, students, Teacher
 from .forms import MateriForm, CareersForm, StudentsForm, TeacherForm
 from django.contrib import messages
@@ -95,9 +95,9 @@ def update_courses(request, code):
     return render(request, 'nav/courses.html', {'course': course})
 
 #elimina curso    
-def eliminarMateria(request, id):
+def eliminarMateria(request, code):
     # Obtener la materia por su ID
-    materia = Materi.objects.get(id=id)
+    materia = Materi.objects.get(pk=code)
     
     # Verificar si la materia existe
     if materia:
@@ -128,20 +128,21 @@ def student(request):
 
 def edit_student(request, code):
     student = students.objects.filter(pk=code).first()
-    form = students(instance=student)
-    return render(request, 'edit/student', {'form': form, 'student': student})
+    form = StudentsForm(instance=student)
+    return render(request, 'edit/student.html', {'form': form, 'student': student})
 
 def update_student(request, code):
-    student = Materi.objects.filter(pk=code).first()
-    form = MateriForm(request.POST, instance=student)
+    student = students.objects.filter(pk=code).first()
+    form = students(request.POST, request.FILES, instance=student)
     if form.is_valid():
         form.save()
     student = students.objects.order_by('code')
     return render(request, 'nav/student.html', {'student': student})
 
-def eliminarEstudiante(request, id):
+
+def eliminarEstudiante(request, code):
     # Obtener el estudiante por su ID
-    estudiante = students.objects.get(id=id)
+    estudiante = students.objects.get(pk=code)
     
     # Verificar si el estudiante existe
     if estudiante:
@@ -151,7 +152,7 @@ def eliminarEstudiante(request, id):
         return redirect('students')
     else:
         # Manejar el caso donde el estudiante no existe
-        return render(request, 'error.html', {'message': 'Estudiante no encontrado'})
+        return render(request, 'student.html', {'message': 'Estudiante no encontrado'})
     
 def create_student(request):
     if request.method == 'POST':
@@ -176,20 +177,20 @@ def teachers(request):
     
 def edit_teachers(request, code):
     teacher = Teacher.objects.filter(pk=code).first()
-    form = Teacher(instance=teacher)
-    return render(request, 'edit/student', {'form': form, 'teacher': teacher})
+    form = TeacherForm(instance=teacher)
+    return render(request, 'edit/teacher.html', {'form': form, 'teacher': teacher})
 
 def update_teacher(request, code):
     teacher = Teacher.objects.filter(pk=code).first()
-    form = TeacherForm(request.POST, instance=teacher)
+    form = students(request.POST, request.FILES, instance=teacher)
     if form.is_valid():
         form.save()
     teacher = Teacher.objects.order_by('code')
     return render(request, 'nav/teacher.html', {'teacher': teacher})
 
-def eliminarMaestro(request, id):
+def eliminarMaestro(request, code):
     # Obtener el maestro por su ID
-    maestro = Teacher.objects.get(id=id)
+    maestro = Teacher.objects.get(pk=code)
     
     # Verificar si el maestro existe
     if maestro:

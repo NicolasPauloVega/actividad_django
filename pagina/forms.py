@@ -71,7 +71,7 @@ class TeacherForm(forms.ModelForm):
         #Le asignamos un widget personalizado para cada campo del formulario
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'las_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'class': 'form-control'}),
             'photo': forms.FileInput(attrs={'class': 'form-control-file'}),

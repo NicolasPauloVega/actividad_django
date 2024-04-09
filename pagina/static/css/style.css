@@ -1,8 +1,422 @@
-/* Estilos globales */
-* {
-    margin: 0px; /* Establece el margen exterior de todos los elementos en 0 */
-    padding: 0px; /* Establece el relleno de todos los elementos en 0 */
-    font-family: Arial, Helvetica, sans-serif; /* Define la fuente utilizada en todo el documento */
-    /* text-decoration: none; */ /* Comentado para evitar subrayado predeterminado en los enlaces */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #002D5B;
+    padding: 10px;
+}
+
+/* Estilos del logotipo */
+.logotipo {
+    display: flex;
+    align-items: center;
+}
+
+.logotipo img {
+    width: 100px; /* Ajustar según el tamaño del logo */
+    margin-right: 20px;
+}
+
+/* Estilos del título y eslogan */
+.titulo_slogan {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.titulo_slogan h1 {
+    color: white;
+    font-size: 25px;
+    margin: 0;
+}
+
+.titulo_slogan hr {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.titulo_slogan h4 {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Estilos del área de login */
+.login {
+    display: flex;
+    align-items: center;
+}
+
+.login a {
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Pseudoclase para estilos al pasar el ratón sobre los enlaces */
+.login a:hover {
+    color: #008037;
+}
+
+
+/* Estilos del encabezado */
+nav {
+    display: flex;
+    background-color: #333;
+    padding: 10px;
+}
+
+/* Estilos de la lista de navegación */
+nav ul {
+    list-style-type: none;
+    margin: 0px auto;
+}
+
+nav ul li a {
+    margin: 0px auto;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700; /* Cambia el color al pasar el ratón sobre el enlace */
+}
+
+/* Estilos del contenido principal */
+#contenido {
+    margin: 20px auto; /* Centra el contenido horizontalmente */
+    max-width: 1250px; /* Define un ancho máximo para el contenido */
+}
+
+/* Estilos de la caja de contenido */
+.box {
+    background-color: #f0f0f0; /* Color de fondo de la caja */
+    padding: 20px; /* Espaciado interno de la caja */;
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para los encabezados */
+.box .content h1, .box h2, .box h3 {
+    color: #333;
+}
+
+/* Estilos para los párrafos */
+.box .content p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Estilos para la lista */
+.box .content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Estilos para los elementos de lista */
+.box .content li {
+    color: #666;
+}
+
+/* Estilos para los elementos de lista fuertes */
+.box .content li strong {
+    color: #333;
+}
+
+/* Estilos del contenido */
+.box .content-DF {
+    padding: 20px;
+}
+
+/* Estilos para los encabezados */
+.box .content-DF h1 {
+    color: #333;
+}
+
+/* Estilos para los párrafos */
+.box .content-DF p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Estilos para los elementos de lista */
+.box .content-DF ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.box .content-DF ul li {
+    color: #666;
+}
+
+/* Estilos para los elementos de lista fuertes */
+.box .content-DF ul li strong {
+    color: #333;
+}
+
+/* Estilos para los enlaces */
+.box .content-DF a {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Estilos para los enlaces al pasar el ratón */
+.box .content-DF a:hover {
+    color: darkblue;
+}
+
+/* Estilos para los encabezados */
+.box .content-Ca h1 {
+    color: #333;
+}
+
+/* Estilos para los párrafos */
+.box .content-Ca p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Estilos para la lista de carreras */
+.box .content-Ca .lista-carreras {
+    margin-top: 20px;
+}
+
+/* Estilos para la tabla de carreras */
+.box .content-Ca .tabla-carreras {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.box .content-Ca .tabla-carreras th,
+.box .content-Ca .tabla-carreras td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.box .content-Ca .tabla-carreras th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para los botones */
+.box .content-Ca button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.box .content-Ca button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .content-Ca button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el título */
+.box .content-Co .Materias {
+    color: #333;
+}
+
+/* Estilos para los párrafos */
+.box .content-Co p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Estilos para la lista de materias */
+.box .content-Co .lista-materias {
+    margin-top: 20px;
+}
+
+/* Estilos para la tabla de materias */
+.box .content-Co .tabla-materias {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.box .content-Co .tabla-materias th,
+.box .content-Co .tabla-materias td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.box .content-Co .tabla-materias th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para los botones */
+.box .content-Co button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.box .content-Co button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .content-Co button:hover {
+    background-color: #45a049;
+}
+
+
+/* Estilos para el título */
+.box .cotent-T h1 {
+    color: #333;
+}
+
+/* Estilos para la tabla de maestros */
+.box .cotent-T .tabla-maestros {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.box .cotent-T .tabla-maestros th,
+.box .cotent-T .tabla-maestros td {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.box .cotent-T .tabla-maestros th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para las imágenes de los maestros */
+.box .cotent-T .lista-maestros img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* para hacer la foto redonda */
+    object-fit: cover; /* para asegurarse de que la foto se ajuste correctamente */
+}
+
+/* Estilos para los botones */
+.box .cotent-T .boton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.box .cotent-T .boton a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .cotent-T .boton:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el título */
+.box .content-Es h1 {
+    color: #333;
+}
+
+/* Estilos para la tabla de estudiantes */
+.box .content-Es .tabla-estudiantes {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.box .content-Es .tabla-estudiantes th,
+.box .content-Es .tabla-estudiantes td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.box .content-Es .tabla-estudiantes th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para las imágenes de los estudiantes */
+.box .content-Es .lista-estudiantes img {
+    width: 50px;
+    border-radius: 10px;
+    object-fit: cover; /* para asegurarse de que la foto se ajuste correctamente */
+}
+
+/* Estilos para los botones */
+.box .content-Es button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.box .content-Es button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .content-Es button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para los botones de eliminar */
+.box .content-Es .-boton-eliminar button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.box .content-Es .-boton-eliminar button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .content-Es .-boton-eliminar button:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para los botones de actualizar */
+.box .content-Es .botton-Actualizar button {
+    background-color: #FFD43B;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.box .content-Es .botton-Actualizar button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .content-Es .botton-Actualizar button:hover {
+    background-color: #D4B300;
+}
+
+
+/* Estilos del pie de página */
+footer {
+    background-color: #002D5B;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
