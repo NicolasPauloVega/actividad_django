@@ -28,7 +28,7 @@
                 <tr>
                     <td>
                         {% if student.photo %}
-                            <img style="width: 40px;" src="{{ student.photo.url }}" alt="Foto de {{ student.name }}">
+                            <img src="{{ student.photo.url }}" alt="Foto de {{ student.name }}">
                         {% else %}
                             No hay foto disponible
                         {% endif %}
