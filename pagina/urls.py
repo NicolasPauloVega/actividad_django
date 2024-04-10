@@ -60,8 +60,8 @@ urlpatterns = [
 
     #URLs para login y registrer de django
     path('registro/', pagina.views.register, name="register"),
-    path('iniciar-sesion/', pagina.views.login, name="login"),
-    path('cerrar-sesion/', pagina.views.logout, name="logout"),
+    path('iniciar-sesion/', pagina.views.login_user, name="login"),
+    path('cerrar-sesion/', pagina.views.logout_user, name="logout"),
 ]
 
 if settings.DEBUG:

@@ -85,12 +85,4 @@ class TeacherForm(forms.ModelForm):
 class RegisterForm(UserCreationForm):
     class Meta:
         model = User
-        fields=['username', 'email', 'first_name', 'last_name', 'password1', 'password2']
-        label = {
-            'username': 'Nombre de usuario',
-            'email': 'Correo Electronico',
-            'first_name': 'Nombre/s',
-            'last_name': 'Apellido/s',
-            'password1': 'Contraseña',
-            'password2': 'Contraseña (Confirmación)'
-        }
+        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']

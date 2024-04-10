@@ -14,11 +14,11 @@
     
                 <thead>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
                         <th>Foto</th>
+                        <th>Nombre completo</th>
+
                         <th>Materias</th>
-                        {% if user.email %}
+                        {% if user.is_superuser %}
                             <th>Eliminar</th>
                             <th>Actualizar</th>
                         {% endif %}
@@ -26,45 +26,49 @@
                 </thead>
     
                 <tbody>
-                    {% for teacher in teacher %}
+                    {% for teacher in teachers %}
                     <tr>
                         <td>
                             {% if teacher.photo %}
                                 <img src="{{ teacher.photo.url }}" alt="Foto de {{ teacher.name }}">
                             {% endif %}
                         </td>
-                        <td>{{ teacher.name }}</td>
-                        <td>{{ teacher.last_name }}</td>
+                        <td>{{ teacher.name }} {{ teacher.last_name }}</td>
                         {% comment 'mostrar nombre' %} creamos un bucle el cual va a iterar sobre la lista de nombres de la tabla materias {% endcomment %}
-                        <td>{% for materi in matery %}
-                                {{ materi }}
-                                {% if not forloop.last %}, {% endif %}
+                        <td>
+                            {% for materia in teacher.materi.all %}
+                                {{ materia.name }}
+                                {% if not forloop.last %} <br> {% endif %}
                             {% endfor %}
                         </td>
-                        {% if user.email %}
+                        {% if user.is_superuser %}
                         <td>
-                            <button>
-                                <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
-                            </button>
+                            <div class="-boton-eliminar">
+                                <button>
+                                    <a href="{% url "delete_teacher" teacher.code %}"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></  a>
+                                </button>
+                            </div>
                         </td>
                         {% endif %}
-                        {% if user.email %}
-                        <td>                            
-                            <button>
-                                <a href="{% url 'edit_teacher' teacher.code %}">
-                                    <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
-                                </a>
-                            </button>
+                        {% if user.is_superuser %}
+                        <td>
+                            <div class="-boton-actualizar">
+                                <button>
+                                    <a href="{% url 'edit_teacher' teacher.code %}">
+                                        <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
+                                    </a>
+                                </button>
+                            </div>                            
                         </td>
                         {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            {% if user.email %}
+            {% if user.is_superuser %}
                 <button class="boton"><a href="{% url 'create_teacher' %}">Agregar Maestros</a></button>
             {% endif %}
         </div>
     </div>
-
-{% endblock  %}
+    <br>
+{% endblock %}

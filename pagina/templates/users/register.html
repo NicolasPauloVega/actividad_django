@@ -8,14 +8,13 @@
         <h1>{{title}}</h1>
         <p>Completa el registro para poder obtener tu cuenta</p>
 
-        <form action="" method="post">
+        {{register.errors}}
+
+        <form class="form-register" method="POST">
             {% csrf_token %}
-            {% comment %} {{register.as_p}} {% endcomment %}
-            {% for field in register %}
-                {{field.label}}
-                {{field}}
-            {% endfor %}
+            {{register.as_p}}
             <input type="submit" value="Registrarse">
         </form>
+        <br>
     </div>
 {% endblock %}

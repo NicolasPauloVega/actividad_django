@@ -227,6 +227,41 @@ nav ul li a:hover {
     background-color: #45a049;
 }
 
+/* Estilos para los botones de eliminar */
+.box .content-Ca .-boton-eliminar button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.box .content-Ca .-boton-eliminar button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .content-Ca .-boton-eliminar button:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para los botones de actualizar */
+.box .content-Ca .botton-Actualizar button {
+    background-color: #FFD43B;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.box .content-Ca .botton-Actualizar button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .content-Ca .botton-Actualizar button:hover {
+    background-color: #D4B300;
+}
+
 /* Estilos para el título */
 .box .content-Co .Materias {
     color: #333;
@@ -278,6 +313,40 @@ nav ul li a:hover {
     background-color: #45a049;
 }
 
+/* Estilos para los botones de eliminar */
+.box .content-Co .-boton-eliminar button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.box .content-Co .-boton-eliminar button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .content-Co .-boton-eliminar button:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para los botones de actualizar */
+.box .content-Co .botton-Actualizar button {
+    background-color: #FFD43B;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.box .content-Co .botton-Actualizar button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .content-Co .botton-Actualizar button:hover {
+    background-color: #D4B300;
+}
 
 /* Estilos para el título */
 .box .cotent-T h1 {
@@ -303,9 +372,8 @@ nav ul li a:hover {
 
 /* Estilos para las imágenes de los maestros */
 .box .cotent-T .lista-maestros img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%; /* para hacer la foto redonda */
+    width: 100px;
+    height: 100px;
     object-fit: cover; /* para asegurarse de que la foto se ajuste correctamente */
 }
 
@@ -325,6 +393,41 @@ nav ul li a:hover {
 
 .box .cotent-T .boton:hover {
     background-color: #45a049;
+}
+
+/* Estilos para los botones de eliminar */
+.box .cotent-T .-boton-eliminar button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.box .cotent-T .-boton-eliminar button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .cotent-T .-boton-eliminar button:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para los botones de actualizar */
+.box .cotent-T .botton-Actualizar button {
+    background-color: #FFD43B;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.box .cotent-T .botton-Actualizar button a {
+    color: white;
+    text-decoration: none;
+}
+
+.box .cotent-T .botton-Actualizar button:hover {
+    background-color: #D4B300;
 }
 
 /* Estilos para el título */
@@ -351,7 +454,7 @@ nav ul li a:hover {
 
 /* Estilos para las imágenes de los estudiantes */
 .box .content-Es .lista-estudiantes img {
-    width: 50px;
+    width: 100px;
     border-radius: 10px;
     object-fit: cover; /* para asegurarse de que la foto se ajuste correctamente */
 }
@@ -587,76 +690,38 @@ nav ul li a:hover {
     background-color: #45a049;
 }
 
+
 /* Estilos para el título del formulario */
-.box .register-user h1 {
+.register-user h1 {
     margin-bottom: 20px;
     text-align: center;
     color: #333;
 }
 
 /* Estilos para los párrafos del formulario */
-.box .register-user p {
+.register-user p {
     margin-bottom: 15px;
     color: #666;
     text-align: center;
-}
-
-/* Estilos para los campos de entrada del formulario */
-.box .register-user input[type="text"],
-.box .register-user input[type="email"],
-.box .register-user input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-/* Estilos para el botón de enviar del formulario */
-.box .register-user input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.box .register-user input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-/*Estilos generales del login*/
-.box .login-user{
-    display: block;
-    align-items: center;
-}
-
-/* Estilos para el título del formulario */
-.box .login-user.title-login {
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
-}
-
-/* Estilos para los párrafos del formulario */
-.box .login-user p {
-    margin-bottom: 15px;
-    color: #666;
 }
 
 /* Estilos para las etiquetas de los campos de entrada */
-.box .login-user label {
+.register-user label {
     display: block;
     margin-bottom: 5px;
     color: #333;
+    text-align: center;
+}
+
+.register-user ul li {
+    list-style: none;
+    text-align: center;
 }
 
 /* Estilos para los campos de entrada del formulario */
-.box .login-user input[type="text"],
-.box .login-user input[type="password"] {
+.register-user input[type="text"],
+.register-user input[type="email"],
+.register-user input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -666,7 +731,7 @@ nav ul li a:hover {
 }
 
 /* Estilos para el botón de enviar del formulario */
-.box .login-user input[type="submit"] {
+.register-user input[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #4CAF50;
@@ -676,7 +741,61 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-.box .login-user input[type="submit"]:hover {
+.register-user input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el mensaje de ayuda */
+.helptext {
+    font-size: 12px;
+    color: #999;
+}
+
+/* Estilos para el título del formulario */
+.title-login {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para los párrafos del formulario */
+.login-user p {
+    margin-bottom: 15px;
+    color: #666;
+    text-align: center;
+}
+
+/* Estilos para las etiquetas de los campos de entrada */
+.login-user label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.login-user input[type="text"],
+.login-user input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar del formulario */
+.login-user input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-user input[type="submit"]:hover {
     background-color: #45a049;
 }
 

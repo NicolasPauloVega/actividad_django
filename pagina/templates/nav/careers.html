@@ -38,10 +38,10 @@
 
                 <thead>
                         <tr>
-                        <th>Codigo</th>
-                        <th>Nombre</th>
-                        <th>Duracion (semana)</th>
-                        {% if user.email %}
+                        <th>Nombre (Niveles A-D)</th>
+                        <th>Duracion (semestres)</th>
+                        <th>Materia (vista)</th>
+                        {% if user.is_superuser %}
                         <th>Eliminar</th>
                         <th>Actualizar</th>
                         {% endif %}
@@ -51,22 +51,26 @@
                 <tbody>
                     {% for careers in career %}
                     <tr>
-                        <td>{{ careers.code }}</td>
                         <td>{{ careers.name }}</td>
                         <td>{{ careers.duration }}</td>
-                        {% if user.email %}
+                        <td>{{ careers.materia }}</td>
+                        {% if user.is_superuser %}
                         <td>
-                            <button>
-                                <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
-                            </button>
+                            <div class="boton-eliminar">
+                                <button>
+                                    <a href="{% url "delete_careers" careers.code %}"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
+                                </button>
+                            </div>
                         </td>
                         
                         <td>
-                            <button>
-                                <a href="{% url 'edit_career' careers.code %}">
-                                    <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
-                                </a>
-                            </button>
+                            <div class="boton-actualizar">
+                                <button>
+                                    <a href="{% url 'edit_career' careers.code %}">
+                                        <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
+                                    </a>
+                                </button>
+                            </div>
                         </td>
                         {% endif %}
                     </tr>
@@ -76,7 +80,7 @@
 
             </table>
 
-            {% if user.email %}
+            {% if user.is_superuser %}
                 <button>
                     <a href="{% url "create_career" %}">Agregar Carreras</a>
                 </button>
@@ -85,5 +89,6 @@
         </div>
 
     </div>
+    <br>
     
 {% endblock  %}

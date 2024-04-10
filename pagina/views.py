@@ -3,12 +3,46 @@ from pagina.models import Materi,Careers, students, Teacher
 from .forms import MateriForm, CareersForm, StudentsForm, TeacherForm, RegisterForm
 from django.contrib import messages
 from django.urls import path
-from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+#Importamos el decorador que bloqueara las vistas para que solo las pueda ver el administrador
+from django.contrib.auth.decorators import user_passes_test
 
 # Create your views here.
 
 # Vista para la página de inicio
+
+def register(request):
+    register_form = RegisterForm()
+    if request.method=='POST':
+        register_form = RegisterForm(request.POST)
+        if register_form.is_valid():
+            register_form.save()
+            messages.success(request, "¡El usuario se ha registrado exitosamente!")
+            return redirect('index')
+    return render(request, 'users/register.html', {
+        'title':'Crear cuenta',
+        'register': register_form
+    })
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("index")
+        else:
+            messages.warning(request, "El nombre usuario y/o contraseña no validos")
+    return render(request, 'users/login.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
+#--------------------------------------------------------------------------------------------------------------------
 def index(request):
     # Retorna la plantilla 'index.html' renderizada junto con algunos datos adicionales
     return render(request, 'nav/index.html', {
@@ -32,7 +66,6 @@ def careers(request):
         'career': career
     })
 
-
 def edit_careers(request, code):
     career = Careers.objects.filter(pk=code).first()
     form = CareersForm(instance=career)
@@ -46,10 +79,10 @@ def update_careers(request, code):
     career = Careers.objects.order_by('code')
     return render(request, 'nav/careers.html', {'career': career})
 
-# Funcion del boton de eliminar    
-def eliminarCareers(request, id):
+# Funcion del boton de eliminar 
+def eliminarCareers(request, code):
     # Obtener la carrera por su ID
-    carrera = Careers.objects.get(id=id)
+    carrera = Careers.objects.get(id=code)
     
     # Verificar si la carrera existe
     if carrera:
@@ -59,8 +92,9 @@ def eliminarCareers(request, id):
         return redirect('careers')
     else:
         # Manejar el caso donde la carrera no existe
-        return render(request, 'error.html', {'message': 'Carrera no encontrada'})
+        return render(request, 'nav/careers.html', {'message': 'Carrera no encontrada'})
 
+@user_passes_test(lambda u: u.is_superuser)
 def create_career(request):
     if request.method == 'POST':
         form = CareersForm(request.POST)
@@ -105,10 +139,10 @@ def eliminarMateria(request, code):
         # Eliminar la materia
         materia.delete()
         # Redireccionar a la página de materias después de eliminar
-        return redirect('materias')
+        return redirect('courses')
     else:
         # Manejar el caso donde la materia no existe
-        return render(request, 'error.html', {'message': 'Materia no encontrada'})
+        return render(request, 'nav/courses.html', {'message': 'Materia no encontrada'})
     
 def create_materi(request):
     if request.method == 'POST':
@@ -153,7 +187,7 @@ def eliminarEstudiante(request, code):
         return redirect('students')
     else:
         # Manejar el caso donde el estudiante no existe
-        return render(request, 'student.html', {'message': 'Estudiante no encontrado'})
+        return render(request, 'nav/student.html', {'message': 'Estudiante no encontrado'})
     
 def create_student(request):
     if request.method == 'POST':
@@ -169,12 +203,11 @@ def create_student(request):
 #--------------------------------------------------------------------------------------------------------------------
 
 def teachers(request):
-    teacher = Teacher.objects.order_by('code')
-    matery = Materi.objects.values_list('name', flat=True)
+    teachers = Teacher.objects.order_by('code')
     return render(request, 'nav/teachers.html', {
-        'teacher': teacher,
-        'matery': matery
+        'teachers': teachers
     })
+
     
 def edit_teachers(request, code):
     teacher = Teacher.objects.filter(pk=code).first()
@@ -201,7 +234,7 @@ def eliminarMaestro(request, code):
         return redirect('teachers')
     else:
         # Manejar el caso donde el maestro no existe
-        return render(request, 'error.html', {'message': 'Maestro no encontrado'})
+        return render(request, 'nav/teachers.html', {'message': 'Maestro no encontrado'})
 
 def create_teacher(request):
     if request.method == 'POST':
@@ -214,35 +247,3 @@ def create_teacher(request):
     return render(request, 'forms/create_teacher.html', {'form': form})
 
 #--------------------------------------------------------------------------------------------------------------------
-
-def register(request):
-    register = RegisterForm()
-    if request.method == 'POST':
-        register = RegisterForm(request.POST)
-        if request.is_valid():
-            register.save()
-            messages.success(request, "El usuario se registro satisfactoriamente.")
-            return('index')
-    return render(request, 'users/register.html',{
-        'title': "Registrar Usuario",
-        'register': register
-    })
-
-def login(request):
-    if request.method=='POST':
-        username = request.POST("username")
-        password = request.POST("password")
-
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('index')
-        else:
-            messages.warning(request, "Usuario o contraseña no es correcto")
-    return render(request, 'users/login.html', {
-        'title': 'Iniciar sesion',
-    })
-
-def logout(request):
-    logout(request)
-    return redirect('login')

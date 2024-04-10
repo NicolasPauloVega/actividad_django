@@ -19,7 +19,7 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>carrera Actual</th>
-                        {% if user.email %}
+                        {% if user.is_superuser %}
                         <th>Eliminar</th>
                         <th>Actualizar</th>
                         {% endif %}
@@ -39,7 +39,7 @@
                         <td>{{ student.name }}</td>
                         <td>{{ student.last_name }}</td>
                         <td>{{student.careers}}</td>
-                        {% if user.email %}
+                        {% if user.is_superuser %}
                         <td>
                             <div class="-boton-eliminar">
                                 <button>
@@ -48,7 +48,7 @@
                             </div>
                         </td>
                         {% endif %}
-                        {% if user.email %}
+                        {% if user.is_superuser %}
                         <td>
                             <div class="botton-Actualizar">
                                 <button>
@@ -63,9 +63,10 @@
                     {% endfor %}
                 </tbody>
             </table>
-            {% if user.email %}
+            {% if user.is_superuser %}
                 <button><a href="{% url 'create_student' %}">Agregar Estudiantes</a></button>
             {% endif %}
         </div>
     </div>
+    <br>
 {% endblock  %}

@@ -24,7 +24,7 @@
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th>Creditos</th>
-                        {% if user.email %}
+                        {% if user.is_superuser %}
                             <th>Eliminar</th>
                             <th>Actualizar</th>
                         {% endif %}
@@ -37,19 +37,22 @@
                         <td>{{ materia.name }}</td>
                         <td>{{ materia.description }}</td>
                         <td>{{ materia.credits }}</td>
-                        {% if user.email %}
+                        {% if user.is_superuser %}
                         <td>
-                            <button>
-                                <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
-                            </button>
+                            <div class="boton-eliminar">
+                                <button>
+                                    <a href="{% url "delete_matery" materia.code %}"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
+                                </button>
+                            </div>
                         </td>
                         <td>
-                            <button>
-                                <a href="{% url 'edit_course' materia.code %}">
-                                    <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
-                                </a>
-                            </button>
-                            </form>
+                            <div class="boton-actualizar">
+                                <button>
+                                    <a href="{% url 'edit_course' materia.code %}">
+                                        <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
+                                    </a>
+                                </button>
+                            </div>
                         </td>
                         {% endif %}
                     </tr>
@@ -58,9 +61,10 @@
                 </tbody>
 
             </table>
-            {% if user.email %}
+            {% if user.is_superuser %}
             <button><a href="{% url 'create_materi' %}">Agregar Materias</a></button>
             {% endif %}
         </div>
     </div>
+    <br>
 {% endblock  %}

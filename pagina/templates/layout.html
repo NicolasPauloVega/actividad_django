@@ -69,13 +69,13 @@
         </ul>
         <div class="login">
             {% if user.email %}
-            {% comment #4.7 %} logout {% endcomment %}
-                <a href="{% url 'register' %}"><i class="fa-solid fa-address-card" style="color: #ffffff;"></i></a>
-            {% else %}
-            {% comment #4.7.1 %} Login {% endcomment %}
-                <a href="{% url 'login' %}"><i class="fa-solid fa-user"></i></a>
-            {% comment #4.7.3 %} register {% endcomment %}
+            {% comment #4.7.1 %} logout {% endcomment %}
                 <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
+            {% else %}
+            {% comment #4.7.2 %} Login {% endcomment %}
+                <a href="{% url 'login' %}"><i class="fa-solid fa-user"></i></a>
+            {% comment #4.7 %} register {% endcomment %}
+                <a href="{% url 'register' %}"><i class="fa-solid fa-address-card" style="color: #ffffff;"></i></a>
             {% endif %}
         </div>
     </nav>

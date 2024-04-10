@@ -19,7 +19,7 @@ class Materi(models.Model):
     update_date = models.DateField(auto_now=True, verbose_name="fecha de actualización")
     
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.code} - {self.name}"
 
     class Meta:
         # Clase Meta para proporcionar metadatos para el modelo Materia.
@@ -28,6 +28,7 @@ class Materi(models.Model):
         verbose_name="Materia"
         # Nombre en plural para múltiples instancias del modelo.
         verbose_name_plural="Materias"
+        ordering = ['code']
 
     @classmethod
     def get_next_code(cls):
@@ -60,7 +61,7 @@ class Careers(models.Model):
     materia = models.ForeignKey(Materi, null=True, blank=True, on_delete=models.CASCADE, verbose_name="materia")
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.code} - {self.name}"
     
     class Meta:
         # Clase Meta para proporcionar metadatos para el modelo Materia.
@@ -69,6 +70,7 @@ class Careers(models.Model):
         verbose_name="Carrera"
         # Nombre en plural para múltiples instancias del modelo.
         verbose_name_plural="Carreras"
+        ordering = ['code']
 
     @classmethod
     def get_next_code(cls):
@@ -104,11 +106,12 @@ class students(models.Model):
     careers = models.ForeignKey(Careers, null=True,blank=True, on_delete=models.CASCADE, verbose_name="carrera")
 
     def __str__(self):
-        return f"{self.name} {self.last_name}"
+        return f"{self.code} - {self.name} {self.last_name}"
 
     class Meta:
         verbose_name="Estudiante"
         verbose_name_plural="Estudiantes"
+        ordering = ['code']
 
     @classmethod
     def get_next_code(cls):
@@ -136,11 +139,12 @@ class Teacher(models.Model):
     materi = models.ManyToManyField(Materi, verbose_name="materia")
 
     def __str__(self):
-        return f"{self.name} {self.last_name}"
+        return f"{self.code} - {self.name} {self.last_name}"
 
     class Meta:
         verbose_name="Profesor"
         verbose_name_plural="Profesores"
+        ordering = ['code']
 
     @classmethod
     def get_next_code(cls):
