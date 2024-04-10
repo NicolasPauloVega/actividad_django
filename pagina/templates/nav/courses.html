@@ -24,8 +24,10 @@
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th>Creditos</th>
-                        <th>Eliminar</th>
-                        <th>Actualizar</th>
+                        {% if user.email %}
+                            <th>Eliminar</th>
+                            <th>Actualizar</th>
+                        {% endif %}
                     </tr>
                 </thead>
 
@@ -35,6 +37,7 @@
                         <td>{{ materia.name }}</td>
                         <td>{{ materia.description }}</td>
                         <td>{{ materia.credits }}</td>
+                        {% if user.email %}
                         <td>
                             <button>
                                 <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
@@ -48,14 +51,16 @@
                             </button>
                             </form>
                         </td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
 
                 </tbody>
 
             </table>
-
+            {% if user.email %}
             <button><a href="{% url 'create_materi' %}">Agregar Materias</a></button>
+            {% endif %}
         </div>
     </div>
 {% endblock  %}

@@ -1,6 +1,9 @@
 from django import forms
 from .models import Materi, Careers, students, Teacher
 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 class MateriForm(forms.ModelForm):
     class Meta:
         model = Materi
@@ -76,4 +79,18 @@ class TeacherForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'class': 'form-control'}),
             'photo': forms.FileInput(attrs={'class': 'form-control-file'}),
             'date_of_birth': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'})
+        }
+
+#formulario para el registro de usario
+class RegisterForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields=['username', 'email', 'first_name', 'last_name', 'password1', 'password2']
+        label = {
+            'username': 'Nombre de usuario',
+            'email': 'Correo Electronico',
+            'first_name': 'Nombre/s',
+            'last_name': 'Apellido/s',
+            'password1': 'Contraseña',
+            'password2': 'Contraseña (Confirmación)'
         }

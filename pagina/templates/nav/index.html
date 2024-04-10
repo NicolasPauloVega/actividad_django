@@ -7,13 +7,21 @@
 
 {% block content %}
     {% comment #1 %} Contenido de la pagina {% endcomment %}
+    
     <div class="content">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="message-register">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
         <h1>
-            ¡Bienvenido a la Universidad Ceicotol Tolima!
+            ¡Bienvenido {{request.user.first_name}} {{user.last_name}} a la Universidad Ceicotol Tolima!
         </h1>
         <br>
         <h2>
-            UCT Academic Manager: tu nuevo portal para el éxito académico
+            UCT : Formando mentes para el mañana: ¡Innovación y excelencia en cada paso!
         </h2>
         <br>
         <p>
@@ -29,7 +37,7 @@
         </p>
         <br>
         <h3>
-            UCT Academic Manager te ofrece:
+            UCT te ofrece:
         </h3>
         <br>  
         <ul>

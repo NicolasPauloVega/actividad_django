@@ -24,42 +24,7 @@ from django.conf import settings
 urlpatterns = [
     # URL para acceder al panel de administración de Django
     path('admin/', admin.site.urls),
-    # URL para la página de inicio, que llama a la vista 'index' definida en 'pagina.views'
-    path('', pagina.views.index, name="index"),
-    # URL para la página futura, que llama a la vista 'future' definida en 'pagina.views'
-    path('future/', pagina.views.future, name="future"),
-    # URL para la página de programas académicos, que llama a la vista 'careers' definida en 'pagina.views'
-    path('carreras/', pagina.views.careers, name="careers"),
-    #URL para la pagina de estudiantes, que llama a la vista 'students' definida en 'pagina.views'
-    path('estudiantes/', pagina.views.student, name="students"),
-    #URL para la pagina de maestros, que llama a la vista 'teachers' definida en 'pagina.views'
-    path('maestros/', pagina.views.teachers, name="teachers"),
-    #URL para la pagina de materias, que llama a la vista 'courses' definida en 'pagina.views'
-    path('materias/', pagina.views.courses, name="courses"),
-    
- # URLs de los formularios creados 
-    path('agregar-materia/', pagina.views.create_materi, name='create_materi'),
-    path('agregar-carrera/', pagina.views.create_career, name='create_career'),
-    path('agregar-estudiante/', pagina.views.create_student, name='create_student'),
-    path('agregar-maestro/', pagina.views.create_teacher, name='create_teacher'),
-    
-    #Urls de edicion
-    path('editar-carrera/<int:code>/', pagina.views.edit_careers, name='edit_career'),
-    path('editar-materia/<int:code>/', pagina.views.edit_courses, name='edit_course'),
-    path('editar-estudinte/<int:code>/', pagina.views.edit_student, name='edit_student'),
-    path('editar-maestro/<int:code>/', pagina.views.edit_teachers, name='edit_teacher'),
-
-    #URLs de actualizacion
-    path('actualizar-carrera/<int:code>/', pagina.views.update_careers, name='update_career'),
-    path('actualizar-materia/<int:code>/', pagina.views.update_courses, name='update_course'),
-    path('actualizar-estudiante/<int:code>/', pagina.views.update_student, name='update_student'),
-    path('actualizar-maestro/<int:code>/', pagina.views.update_teacher, name='update_teacher'),
-
-    #URLs de eliminar
-    path('eliminar-carrera/<int:code>/', pagina.views.eliminarCareers, name="delete_careers"),
-    path('eliminar-materia/<int:code>/', pagina.views.eliminarMateria, name="delete_matery"),
-    path('eliminar-estudiante/<int:code>/', pagina.views.eliminarEstudiante, name="delete_student"),
-    path('eliminar-maestro/<int:code>/', pagina.views.eliminarMaestro, name="delete_teacher"),
+    path('', include('pagina.urls')),
 ]
 
 if settings.DEBUG:

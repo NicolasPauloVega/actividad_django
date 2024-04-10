@@ -41,8 +41,10 @@
                         <th>Codigo</th>
                         <th>Nombre</th>
                         <th>Duracion (semana)</th>
+                        {% if user.email %}
                         <th>Eliminar</th>
                         <th>Actualizar</th>
+                        {% endif %}
                     </tr>
                 </thead>
 
@@ -52,6 +54,7 @@
                         <td>{{ careers.code }}</td>
                         <td>{{ careers.name }}</td>
                         <td>{{ careers.duration }}</td>
+                        {% if user.email %}
                         <td>
                             <button>
                                 <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
@@ -65,6 +68,7 @@
                                 </a>
                             </button>
                         </td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
 
@@ -72,9 +76,11 @@
 
             </table>
 
-            <button>
-                <a href="{% url "create_career" %}">Agregar Carreras</a>
-            </button>
+            {% if user.email %}
+                <button>
+                    <a href="{% url "create_career" %}">Agregar Carreras</a>
+                </button>
+            {% endif %}
 
         </div>
 

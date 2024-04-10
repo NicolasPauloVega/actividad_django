@@ -1,9 +1,10 @@
 from django.shortcuts import redirect, render, HttpResponse, get_object_or_404
 from pagina.models import Materi,Careers, students, Teacher
-from .forms import MateriForm, CareersForm, StudentsForm, TeacherForm
+from .forms import MateriForm, CareersForm, StudentsForm, TeacherForm, RegisterForm
 from django.contrib import messages
 from django.urls import path
-from . import views
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 
@@ -212,3 +213,36 @@ def create_teacher(request):
         form = TeacherForm()
     return render(request, 'forms/create_teacher.html', {'form': form})
 
+#--------------------------------------------------------------------------------------------------------------------
+
+def register(request):
+    register = RegisterForm()
+    if request.method == 'POST':
+        register = RegisterForm(request.POST)
+        if request.is_valid():
+            register.save()
+            messages.success(request, "El usuario se registro satisfactoriamente.")
+            return('index')
+    return render(request, 'users/register.html',{
+        'title': "Registrar Usuario",
+        'register': register
+    })
+
+def login(request):
+    if request.method=='POST':
+        username = request.POST("username")
+        password = request.POST("password")
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('index')
+        else:
+            messages.warning(request, "Usuario o contraseña no es correcto")
+    return render(request, 'users/login.html', {
+        'title': 'Iniciar sesion',
+    })
+
+def logout(request):
+    logout(request)
+    return redirect('login')

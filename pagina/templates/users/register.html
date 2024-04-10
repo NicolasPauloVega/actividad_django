@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+    <div class="register-user">
+        <h1>{{title}}</h1>
+        <p>Completa el registro para poder obtener tu cuenta</p>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {% comment %} {{register.as_p}} {% endcomment %}
+            {% for field in register %}
+                {{field.label}}
+                {{field}}
+            {% endfor %}
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+{% endblock %}

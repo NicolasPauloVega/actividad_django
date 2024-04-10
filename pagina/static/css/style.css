@@ -52,7 +52,7 @@ header {
 }
 
 /* Estilos del área de login */
-.login {
+.login{
     display: flex;
     align-items: center;
 }
@@ -586,6 +586,100 @@ nav ul li a:hover {
 .box .form-teacher input[type="submit"]:hover {
     background-color: #45a049;
 }
+
+/* Estilos para el título del formulario */
+.box .register-user h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para los párrafos del formulario */
+.box .register-user p {
+    margin-bottom: 15px;
+    color: #666;
+    text-align: center;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.box .register-user input[type="text"],
+.box .register-user input[type="email"],
+.box .register-user input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar del formulario */
+.box .register-user input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box .register-user input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/*Estilos generales del login*/
+.box .login-user{
+    display: block;
+    align-items: center;
+}
+
+/* Estilos para el título del formulario */
+.box .login-user.title-login {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para los párrafos del formulario */
+.box .login-user p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* Estilos para las etiquetas de los campos de entrada */
+.box .login-user label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilos para los campos de entrada del formulario */
+.box .login-user input[type="text"],
+.box .login-user input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar del formulario */
+.box .login-user input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.box .login-user input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
 
 /* Estilos del pie de página */
 footer {

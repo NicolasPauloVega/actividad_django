@@ -18,8 +18,10 @@
                         <th>Apellido</th>
                         <th>Foto</th>
                         <th>Materias</th>
-                        <th>Eliminar</th>
-                        <th>Actualizar</th>
+                        {% if user.email %}
+                            <th>Eliminar</th>
+                            <th>Actualizar</th>
+                        {% endif %}
                     </tr>
                 </thead>
     
@@ -39,23 +41,29 @@
                                 {% if not forloop.last %}, {% endif %}
                             {% endfor %}
                         </td>
+                        {% if user.email %}
                         <td>
                             <button>
                                 <a href="#"><i class="fa-sharp fa-solid fa-xmark" style="color: #ff0000;"></i></a>
                             </button>
                         </td>
-                        <td>
+                        {% endif %}
+                        {% if user.email %}
+                        <td>                            
                             <button>
                                 <a href="{% url 'edit_teacher' teacher.code %}">
                                     <i class="fa-sharp fa-solid fa-pen-to-square" style="color: #FFD43B;"></i>
                                 </a>
                             </button>
                         </td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            <button class="boton"><a href="{% url 'create_teacher' %}">Agregar Maestros</a></button>
+            {% if user.email %}
+                <button class="boton"><a href="{% url 'create_teacher' %}">Agregar Maestros</a></button>
+            {% endif %}
         </div>
     </div>
 
