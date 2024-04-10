@@ -4,12 +4,14 @@
 {% block title %} Editar materia {% endblock %}
 
 {% block content %}
-    <h1>editar materia</h1>
-    <form action="{% url 'update_course' course.code %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+    <div class="form-course">
+        <h1>Editar Materia</h1>
+        <form action="{% url 'update_course' course.code %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-        <button type="submit">Guardar cambios</button>
-    </form>
-    <a href="{% url 'courses' %}">cancelar</a>
+            <button type="submit">Guardar cambios</button>
+        </form>
+        <a href="{% url 'courses' %}">cancelar</a>
+    </div>
 {% endblock %}

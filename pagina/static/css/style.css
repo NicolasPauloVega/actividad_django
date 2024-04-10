@@ -810,3 +810,229 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Estilos para el formulario de edición de carrera */
+.form-careers {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Estilos para el título del formulario */
+.form-careers h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos para las etiquetas de los campos */
+.form-careers label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Estilos para los inputs */
+.form-careers input[type="text"],
+.form-careers input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para el botón de guardar cambios */
+.form-careers button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.form-careers button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el enlace de cancelar */
+.form-careers a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.form-careers a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el formulario de edición de materia */
+.form-course {
+    width: 97%;
+    padding: 20px;
+}
+
+/* Estilos para el título del formulario */
+.form-course h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos para las etiquetas de los campos */
+.form-course label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Estilos para los inputs y textarea */
+.form-course input[type="text"],
+.form-course input[type="number"],
+.form-course textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilos para el botón de guardar cambios */
+.form-course button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.form-course button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el enlace de cancelar */
+.form-course a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.form-course a:hover {
+    text-decoration: underline;
+}
+
+/*Estilos para el formulario editar maestro*/
+.form-teacher h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-teacher label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-teacher input[type="text"],
+.form-teacher input[type="email"],
+.form-teacher input[type="tel"],
+.form-teacher input[type="date"],
+.form-teacher input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-teacher button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.form-teacher a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #eee;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.form-teacher button:hover,
+.form-teacher a:hover {
+    background-color: #0056b3;
+}
+
+
+/*Estilos para el formulario de estudiantes*/
+.form-student h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-student label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-student input[type="text"],
+.form-student input[type="email"],
+.form-student input[type="tel"],
+.form-student input[type="date"],
+.form-student input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-student button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.form-student a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #eee;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.form-student button:hover,
+.form-student a:hover {
+    background-color: #0056b3;
+}

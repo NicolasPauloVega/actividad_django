@@ -4,12 +4,14 @@
 {% block title %} Editar maestro {% endblock %}
 
 {% block content %}
-    <h1>editar maestro</h1>
-    <form action="{% url 'update_teacher' teacher.code %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+    <div class="form-teacher">
+        <h1>Editar Maestro</h1>
+        <form action="{% url 'update_teacher' teacher.code %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
 
-        <button type="submit">Guardar cambios</button>
-    </form>
-    <a href="{% url 'teachers' %}">cancelar</a>
+            <button type="submit">Guardar cambios</button>
+        </form>
+        <a href="{% url 'teachers' %}">cancelar</a>
+    </div>
 {% endblock %}

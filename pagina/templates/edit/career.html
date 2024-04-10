@@ -4,12 +4,14 @@
 {% block title %} Editar carrera {% endblock %}
 
 {% block content %}
-    <h1>editar Careers</h1>
-    <form action="{% url 'update_career' career.code %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-
-        <button type="submit">Guardar cambios</button>
-    </form>
-    <a href="{% url 'careers' %}">cancelar</a>
+    <div class="form-careers">
+        <h1>Editar Carrera</h1>
+        <form action="{% url 'update_career' career.code %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+    
+            <button type="submit">Guardar cambios</button>
+        </form>
+        <a href="{% url 'careers' %}">cancelar</a>
+    </div>
 {% endblock %}
